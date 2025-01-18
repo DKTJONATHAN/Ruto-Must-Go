@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: aliceblue;
+}
+
+body {
+  margin: 0 auto;
+  font-weight: 400;
+  font-style: normal;
+}
+body .main-frame {
+  margin: 0 auto;
+}
+body .main-frame .frame1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  background: #fff;
+}
+body .main-frame .frame1 .navbar-section1 {
+  display: flex;
+  align-items: center;
+}
+body .main-frame .frame1 .navbar-section1 span {
+  cursor: pointer;
+}
+body .main-frame .frame1 .navbar-section1 #menu {
+  visibility: collapse;
+}
+body .main-frame .frame1 .navbar-section1 h2 {
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+body .main-frame .frame1 .navbar-section2 {
+  transition-duration: 2s;
+}
+body .main-frame .frame1 .navbar-section2 ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .main-frame .frame1 .navbar-section2 ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 0 5px;
+}
+body .main-frame .frame1 .navbar-section2 ul li a:hover {
+  color: #dd0808;
+}
+body .main-frame .frame1 .navbar-section3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  align-items: center;
+}
+body .main-frame .frame1 .navbar-section3 span {
+  margin: 0 2px;
+  cursor: pointer;
+}
+@media screen and (max-width: 40rem) {
+  body .main-frame .frame1 .navbar-section1 {
+    display: flex;
+    align-items: center;
+  }
+  body .main-frame .frame1 .navbar-section1 span {
+    cursor: pointer;
+  }
+  body .main-frame .frame1 .navbar-section1 #menu {
+    visibility: visible;
+  }
+  body .main-frame .frame1 .navbar-section1 h2 {
+    margin-left: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  body .main-frame .frame1 .navbar-section2 {
+    display: none;
+  }
+  body .main-frame .frame1 .navbar-section2 ul {
+    list-style-type: none;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 55px;
+    background: #000;
+    height: 100vh;
+    width: 100%;
+  }
+  body .main-frame .frame1 .navbar-section2 ul li a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  body .main-frame .frame1 .navbar-section2 ul li a:hover {
+    border-bottom: 1px solid #dd0808;
+  }
+  body .main-frame .frame1 .navbar-section3 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    align-items: center;
+  }
+  body .main-frame .frame1 .navbar-section3 span {
+    margin: 0 2px;
+    cursor: pointer;
+  }
+}
+body .main-frame .frame2 {
+  width: 100%;
+  height: 400px;
+  background-image: url("../Assets/tq_gkuesghzdx-71l1500h.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body .main-frame .frame2 .frame2-section h1 {
+  font-size: 4rem;
+}
+body .main-frame .frame2 .frame2-section p {
+  font-weight: bolder;
+  padding: 2rem 0;
+}
+body .main-frame .frame2 .frame2-section a {
+  color: #fff;
+  background: #dd0808;
+  padding: 10px 20px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3rem;
+  text-decoration: none;
+}
+body .main-frame .frame2 .frame2-section a:hover {
+  background: rgba(221, 8, 8, 0.8078431373);
+}
+@media screen and (max-width: 40rem) {
+  body .main-frame .frame2 {
+    width: 100%;
+    height: 400px;
+    background-image: url("../Assets/tq_gkuesghzdx-71l1500h.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .main-frame .frame2 .frame2-section h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+  body .main-frame .frame2 .frame2-section p {
+    font-weight: bolder;
+    padding: 2rem 1rem;
+  }
+  body .main-frame .frame2 .frame2-section a {
+    color: #fff;
+    background: #dd0808;
+    padding: 10px 20px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3rem;
+    text-decoration: none;
+  }
+  body .main-frame .frame2 .frame2-section a:hover {
+    background: rgba(221, 8, 8, 0.8078431373);
+  }
+}
+body .main-frame .frame3 {
+  margin: 1rem;
+  padding: 3rem 0;
+}
+body .main-frame .frame3 h1 {
+  padding-bottom: 2rem;
+}
+body .main-frame .frame3 .frame3-section {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem;
+}
+body .main-frame .frame3 .frame3-section .card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2274509804);
+}
+body .main-frame .frame3 .frame3-section .card .top img {
+  width: 100%;
+  height: 250px;
+  border-radius: 1rem 1rem 0 0;
+}
+body .main-frame .frame3 .frame3-section .card .bottom {
+  margin: 1rem;
+}
+body .main-frame .frame3 .frame3-section .card .bottom h5 {
+  padding: 1rem 0;
+  color: #dd0808;
+}
+body .main-frame .frame3 .frame3-section .card .bottom p {
+  padding: 1rem 0;
+}
+body .main-frame .frame3 .frame3-section .card .bottom a {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+body .main-frame .frame3 .frame3-section .card .bottom a:hover {
+  background: #dd0808;
+}
+@media screen and (max-width: 40rem) {
+  body .main-frame .frame3 {
+    margin: 0;
+    padding: 1rem 0.5rem;
+  }
+  body .main-frame .frame3 h1 {
+    padding-bottom: 1rem;
+  }
+  body .main-frame .frame3 .frame3-section {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+  }
+  body .main-frame .frame3 .frame3-section .card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2274509804);
+  }
+  body .main-frame .frame3 .frame3-section .card .top img {
+    height: 180px;
+  }
+  body .main-frame .frame3 .frame3-section .card .bottom {
+    margin: 0.5rem;
+  }
+  body .main-frame .frame3 .frame3-section .card .bottom h5 {
+    padding: 0.5rem 0;
+  }
+  body .main-frame .frame3 .frame3-section .card .bottom p {
+    padding: 0.5rem 0;
+  }
+  body .main-frame .frame3 .frame3-section .card .bottom a {
+    padding: 0.5rem;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+body .main-frame .frame4 {
+  background: #000;
+  color: #fff;
+  padding: 2rem 2rem 0 2rem;
+}
+body .main-frame .frame4 .frame4-top h1 {
+  text-transform: capitalize;
+}
+body .main-frame .frame4 .frame4-top .frame4-top-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+body .main-frame .frame4 .frame4-top .frame4-top-section .card1 {
+  background: rgba(112, 112, 112, 0.4823529412);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+body .main-frame .frame4 .frame4-top .frame4-top-section .card1 a {
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: inherit;
+  color: white;
+}
+body .main-frame .frame4 .frame4-top .frame4-top-section .card1 a:hover {
+  background: #dd0808;
+}
+body .main-frame .frame4 .frame4-bottom {
+  margin: 8rem 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  padding: 0 0 2rem 0;
+  gap: 2rem;
+}
+body .main-frame .frame4 .frame4-bottom .col h2 {
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+body .main-frame .frame4 .frame4-bottom .col ul {
+  list-style-type: none;
+}
+body .main-frame .frame4 .frame4-bottom .col ul li {
+  margin: 0.5rem 0;
+}
+body .main-frame .frame4 .frame4-bottom .col ul li a {
+  color: #707070;
+  text-decoration: none;
+}
+body .main-frame .frame4 .frame4-bottom .col ul li a:hover {
+  text-decoration: underline #dd0808;
+}
+body .main-frame .frame4 .frame4-bottom .col p {
+  margin: 1rem 0;
+}
+body .main-frame .frame4 .frame4-bottom .col4 ul {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=index.css.map */
