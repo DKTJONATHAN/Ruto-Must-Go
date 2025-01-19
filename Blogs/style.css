@@ -1,0 +1,84 @@
+body {
+    background-color: #001000; /* Kenyan Flag: Green */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff; /* Default text color */
+}
+
+header {
+    background-color: #fff; /* White */
+    color: #001000; /* Kenyan Flag: Green */
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(0, 16, 0, 0.8); /* Semi-transparent green for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    overflow-y: auto;
+}
+
+article {
+    max-width: 900px;
+    width: 100%;
+}
+
+p {
+    color: #f00; /* Kenyan Flag: Red */
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 auto 20px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1); /* Light overlay for better readability */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #000; /* Black */
+    color: #fff; /* White */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Enhancements for better readability and design */
+h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #001000;
+    margin: 10px auto 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header, main, footer {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 16px;
+        padding: 15px;
+    }
+}

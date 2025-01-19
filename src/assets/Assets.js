@@ -6,7 +6,7 @@ import image4 from "./image4.png"
 
 export const Assests = {
     image1,
-    image2,
+    image2, 
     image3,
     image4
 }
