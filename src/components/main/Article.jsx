@@ -1,7 +1,7 @@
 import React from 'react'
 import { Assests } from '../../assets/Assets'
 
-export default function Main() {
+export default function Article() {
   return (
     <div class="main-frame">
         <div class="frame2">
