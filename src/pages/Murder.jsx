@@ -1,115 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murders Linked to William Ruto</title>
-    <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* Image Styles */
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-<body>
+import React from 'react'
+import {NavLink } from "react-router-dom"
+import { BiHomeAlt2 as Home } from "react-icons/bi";
+const Murder = () => {
+  return (
+    <div id='bill'>
     <header>
         <h1>Murders Linked to William Ruto</h1>
     </header>
-
+ {/* redirect home */}
+   <NavLink to="/" className="fixed bottom-40 right-10 bg-sky-800 p-1 w-fit rounded-full text-white font-extrabold">
+            <Home/>
+        </NavLink>
     <main>
         <div class="container">
             <article>
@@ -117,19 +18,19 @@
                 <p>
                     William Ruto's name has surfaced in connection with several high-profile murders in Kenya. One of the earliest cases was during the 2007-2008 post-election violence, where Ruto was accused by the International Criminal Court (ICC) of orchestrating attacks that led to numerous deaths, including the Kiambaa church fire where dozens perished. Although the ICC case against him was eventually dropped due to witness tampering and insufficient evidence, the allegations left a significant mark on his political career.
                 </p>
-                <img src="../Assets/juma.webp" alt="Jacob Juma Murder" />
+                <img src="images/jacob-juma.jpg" alt="Jacob Juma Murder" />
                 <p>
                     Another notable case is the murder of Jacob Juma, a businessman and government critic, in 2016. Juma had been vocal against Ruto on social media, accusing him of corruption. His assassination led to speculation and claims by some that Ruto had a motive for wanting Juma silenced, although direct evidence linking Ruto to the murder was never conclusively established.
                 </p>
-                <img src="../Assets/MESHACK-YEBEI.jpg" alt="Meshack Yebei Murder" />
+                <img src="images/meshack-yebei.jpg" alt="Meshack Yebei Murder" />
                 <p>
                     The death of Meshack Yebei, a former bodyguard of Ruto, in 2015, also drew attention. Yebei was allegedly a key witness in the ICC case against Ruto. His body was found in Uganda, and it was suggested by some reports that his death might have been linked to preventing him from testifying against Ruto, though no direct link was officially confirmed.
                 </p>
-                <img src="../Assets/ian.jpg" alt="Ian Singoei Death" />
+                <img src="images/ian-singoei.jpg" alt="Ian Singoei Death" />
                 <p>
                     More recently, there have been allegations of Ruto's involvement in the deaths of activists and critics. In 2023, the suspicious death of activist Ian Singoei was linked by some to government suppression of dissent, with claims that those close to Ruto might have played a role, though these remain unproven assertions without legal substantiation.
                 </p>
-                <img src="../Assets/keino.jpg" alt="Mercy Keino Murder" />
+                <img src="images/mercy-keino.jpg" alt="Mercy Keino Murder" />
                 <p>
                     In 2024, the murder of Mercy Keino, a university student, was also mentioned in discussions around political abductions and killings. Although the government denied any involvement, some reports suggested that she was targeted due to her association with movements critical of Ruto's administration.
                 </p>
@@ -149,5 +50,8 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
-</body>
-</html>
+</div>
+  )
+}
+
+export default Murder

@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+    font-family: "Poppins", serif;
+}
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: aliceblue;
+  }
+  
+  body {
+    margin: 0 auto;
+    font-weight: 400;
+    font-style:normal;
+
+    .main-frame{
+        margin: 0 auto;
+
+        .frame1{
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            align-items: center;
+            background: #fff;
+
+            .navbar-section1{
+                display: flex;
+                align-items: center;
+
+                span{
+                    cursor: pointer;
+                }
+
+                #menu{
+                    visibility: collapse;
+                }
+
+                h2{
+                    margin-left: 1rem;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+            }
+
+            .navbar-section2{
+                transition-duration: 2s;
+
+                ul{
+                    list-style-type: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    li{
+                        a{
+                            font-size: 1rem;
+                            text-decoration: none;
+                            color: #000;
+                            display: block;
+                            padding: 0 5px;
+                        }
+                        a:hover{
+                            color: #dd0808;
+                        }
+                    }
+                }
+
+            }
+
+            .navbar-section3{
+                display: flex;
+                justify-content: space-between;
+                font-size: 1rem;
+                align-items: center;
+
+                span{
+                    margin: 0 2px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        @media screen and (max-width: 40rem) {
+            .frame1{
+                .navbar-section1{
+                    display: flex;
+                    align-items: center;
+    
+                    span{
+                        cursor: pointer;
+                    }
+    
+                    #menu{
+                        visibility: visible;
+                    }
+    
+                    h2{
+                        margin-left: 1rem;
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
+                }
+                
+                .navbar-section2{
+                    display: none;
+    
+                    ul{
+                        list-style-type: none;
+                        display: block;
+                        align-items: center;
+                        justify-content: space-between;
+                        position: fixed;
+                        left: 0;
+                        top: 55px;
+                        background: #000;
+                        height: 100vh;
+                        width: 100%;
+
+                        li{
+                            a{
+                                font-size: 1rem;
+                                text-decoration: none;
+                                color: #fff;
+                                display: block;
+                                padding: 10px;
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            a:hover{
+                                border-bottom: 1px solid #dd0808;
+                            }
+                        }
+                    }
+    
+                }
+    
+                .navbar-section3{
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 1rem;
+                    align-items: center;
+    
+                    span{
+                        margin: 0 2px;
+                        cursor: pointer;
+                    }
+                }
+            } 
+        }
+
+        .frame2{
+            width: 100%;
+            height: 400px;
+            background-image: url("../Assets/tq_gkuesghzdx-71l1500h.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            .frame2-section{
+                h1{
+                    font-size: 4rem;
+                }
+
+                p{
+                    font-weight: bolder;                    
+                    padding: 2rem 0;
+                }
+
+                a{
+                    color: #fff;
+                    background: #dd0808;
+                    padding: 10px 20px;
+                    display: inline-flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 3rem;
+                    text-decoration: none;
+                }
+
+                a:hover{
+                    background: #dd0808ce;
+                }
+            }
+        }
+
+        @media screen and (max-width: 40rem) {
+            .frame2{
+                width: 100%;
+                height: 400px;
+                background-image: url("../Assets/tq_gkuesghzdx-71l1500h.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+    
+                .frame2-section{
+                    h1{
+                        font-size: 2rem;
+                        padding: 0 1rem;
+                    }
+    
+                    p{
+                        font-weight: bolder;                    
+                        padding: 2rem 1rem;
+                    }
+    
+                    a{
+                        color: #fff;
+                        background: #dd0808;
+                        padding: 10px 20px;
+                        display: inline-flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-radius: 3rem;
+                        text-decoration: none;
+                    }
+    
+                    a:hover{
+                        background: #dd0808ce;
+                    }
+                }
+            }
+        }
+
+        .frame3{
+            margin: 1rem;
+            padding: 3rem 0;
+
+            h1{
+                padding-bottom: 2rem;
+            }
+
+            .frame3-section{
+                padding: 1rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+                gap: 2rem;
+
+                .card{
+                    background: #fff;
+                    border-radius: 1rem;
+                    box-shadow: 0 1px 5px #0000003a;
+
+                    .top{
+                        img{
+                            width: 100%;
+                            height: 250px;
+                            border-radius: 1rem 1rem 0 0;
+                        }
+                    }
+
+                    .bottom{
+                        margin: 1rem;
+                        
+                        h5{
+                            padding: 1rem 0;
+                            color: #dd0808;
+                        }
+
+                        p{
+                            padding: 1rem 0;
+                        }
+
+                        a{
+                            background: #000;
+                            color: #fff;
+                            padding: 0.5rem;
+                            text-decoration: none;
+                            border-radius: 5px;
+                        }
+
+                        a:hover{
+                            background: #dd0808;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        @media screen and (max-width:40rem) {
+            .frame3{
+                margin: 0;
+                padding: 1rem 0.5rem;
+    
+                h1{
+                    padding-bottom: 1rem;
+                }
+    
+                .frame3-section{
+                    padding: 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+                    gap: 1rem;
+    
+                    .card{
+                        background: #fff;
+                        border-radius: 1rem;
+                        box-shadow: 0 1px 5px #0000003a;
+    
+                        .top{
+                            img{
+                                height: 180px;
+                            }
+                        }
+    
+                        .bottom{
+                            margin: 0.5rem;
+                            
+                            h5{
+                                padding: 0.5rem 0;
+                            }
+    
+                            p{
+                                padding: 0.5rem 0;
+                            }
+    
+                            a{
+                                padding: 0.5rem;
+                                display: block;
+                                width: fit-content;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+    
+    
+            } 
+        }
+
+        .frame4{
+            background: #000;
+            color: #fff;
+            padding: 2rem 2rem 0 2rem;
+
+            .frame4-top{
+                h1{
+                    text-transform: capitalize;
+                }
+
+                .frame4-top-section{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+                    gap: 2rem;
+
+                    .card1{
+                        background: #7070707b;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 10px;
+
+                        a{
+                            display: block;
+                            text-decoration: none;
+                            margin: 0 auto;
+                            padding: 2rem;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            border-radius: inherit;
+                            color: white;
+                        }
+
+                        a:hover{
+                            background: #dd0808;
+                        }
+                    }
+                }
+            }
+
+            .frame4-bottom{
+                margin: 8rem 0 0 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+                padding: 0 0 2rem 0;
+                gap: 2rem;
+
+                .col{
+                    h2{
+                        text-transform: capitalize;
+                        font-size: 1rem;
+                        margin: 0 0 1rem 0;
+                    }
+
+                    ul{
+                        list-style-type: none;
+
+                        li{
+                            margin: 0.5rem 0;
+
+                            a{
+                                color: #707070;
+                                text-decoration: none;
+                            }
+
+                            a:hover{
+                                text-decoration: underline #dd0808;
+                            }
+                        }
+                    }
+
+                    p{
+                        margin: 1rem 0;
+                    }
+
+                }
+
+                .col4{
+                    ul{
+                        display: flex;
+                        gap: 0.5rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+        }
+      }
+  }
+

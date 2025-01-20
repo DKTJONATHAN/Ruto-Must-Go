@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* tailwind confg */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main Frame */
+.main-frame {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Styling */
+.frame1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-section1 h2 {
+  font-size: 24px;
+}
+
+.navbar-section2 ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-section2 ul li a {
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar-section2 ul li a:hover {
+  color: #FFD700;
+}
+
+.navbar-section3 span {
+  font-size: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* Frame2: Static Header Image with Glassmorphism */
+.frame2 {
+  position: relative;
+  height: 400px; /* Set a fixed height for the header */
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Single Header Image */
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* Position the image so the top part is visible */
+  filter: brightness(50%); /* Reduce brightness by 50% */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Set lower z-index to position behind the glassmorphism */
+}
+
+/* Glassmorphism Overlay */
+.frame2-content .glassmorphism {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.5px);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  opacity: 1; /* Set to 100% opacity */
+  z-index: 2; /* Set a higher z-index so it appears above the image */
+}
+
+.frame2-content .glassmorphism h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.frame2-content .glassmorphism p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.frame2-content .glassmorphism a {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: black;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.frame2-content .glassmorphism a:hover {
+  background-color: #FFA500;
+}
+
+/* Featured Stories Section */
+.frame3 {
+  padding: 40px;
+  background-color: #f5f5f5;
+}
+
+.frame3 h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.frame3-section {
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card .top img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .bottom {
+  padding: 20px;
+}
+
+.card .bottom h5 {
+  color: #FFD700;
+  font-size: 14px;
+}
+
+.card .bottom h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.card .bottom p {
+  font-size: 14px;
+  color: #555;
+}
+
+.card .bottom a {
+  color: #FFD700;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card .bottom a:hover {
+  color: #FFA500;
+}
+
+/* Popular Topics Section */
+.frame4 {
+  padding: 40px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.frame4 h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.frame4-top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card1 {
+  background-color: #444;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+.card1:hover {
+  background-color: #FFD700;
+}
+
+.card1 a {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card1 a:hover {
+  color: black;
+}
+
+/* Footer */
+.frame4-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+
+.col {
+  flex: 1;
+}
+
+.col h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.col ul li a {
+  display: block;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.col ul li a:hover {
+  color: #FFD700;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  /* .frame1 {
+      flex-direction: column;
+      align-items: center;
+  } */
+
+  /* .navbar-section2 ul {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+  } */
+
+  /* .navbar-section2 ul.active {
+      display: flex;
+  } */
+
+  .navbar-section3 span {
+      margin-left: 0;
+  }
+
+  .frame3-section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .frame4-bottom {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
+/*# sourceMappingURL=index.css.map */
+/* all blog page styling */
+#bill {
+  background-color: #001000; /* Kenyan Flag: Green */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Header Styles */
+#bill header {
+  background: linear-gradient(to right, #fff, #e6e6e6);
+  color: #001000;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#bill h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Main Content Styles */
+#bill main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#bill .container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+#bill article {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#bill p {
+  color: #000;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Image Styles for Carousel */
+#bill .carousel {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+#bill .carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  transition: opacity 1s ease-in-out;
+}
+
+#bill .carousel img:not(:first-child) {
+  display: none; /* Hide other images by default */
+}
+
+/* Footer Styles */
+#bill footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #bill header {
+      padding: 20px 15px;
+  }
+  
+  #bill h1 {
+      font-size: 2em;
+  }
+  
+  #bill .container {
+      padding: 0 15px;
+  }
+  
+  #bill article {
+      padding: 20px;
+  }
+  
+  #bill p {
+      font-size: 16px;
+  }
+}
+/* finance bill styling end */
