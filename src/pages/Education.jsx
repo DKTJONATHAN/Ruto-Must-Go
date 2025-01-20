@@ -1,135 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education Under Siege: The Ruto Era</title>
-    <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Image Carousel Styles */
-        .carousel-container {
-            position: relative;
-            max-width: 100%;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
-
-        .carousel-images img {
-            max-width: 100%;
-            border-radius: 10px;
-            display: block;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
+import React, {useState, useEffect} from 'react'
+import image1 from "../assets/images/cbc1.jpg"
+import image2 from "../assets/images/cbc2.jpg"
+import {NavLink} from "react-router-dom"
+import { BiHomeAlt2 as Home } from "react-icons/bi";
+const Education = () => {
+    const slides = [image1, image2]
+    const [curr, setCurr] = useState(0)
+    const prev = () => {
+        setCurr((curr) => curr == 0 ? slides.length - 1 : curr -1)
+    }
+    const next= () => {
+        setCurr((curr) => curr ==slides.length-1 ? 0 : curr + 1)
+    }
+    useEffect(() => {
+        const scroll = false
+        if(scroll){return console.log("no scroll")}
+        const slideInterval = setInterval(next, 3000)
+        return () => clearInterval(slideInterval)
+    }, [])
+  return (
+    <div id='bill'>
+      <header>
         <h1>Education Under Siege: The Ruto Era</h1>
     </header>
-
+   {/* redirect home */}
+   <NavLink to="/" className="fixed bottom-40 right-10 bg-sky-800 p-1 w-fit rounded-full text-white font-extrabold">
+            <Home/>
+        </NavLink>
     <main>
         <div class="container">
             <article>
-                <!-- Image Carousel with automatic switching of images every 2 seconds -->
+                {/* <!-- Image Carousel with automatic switching of images every 2 seconds --> */}
                 <div class="carousel-container">
                     <div class="carousel-images">
-                        <img src="../Assets/cbc1.jpg" alt="Image 1">
-                        <img src="../Assets/cbc2.jpg" alt="Image 2">
+                        <img src={slides[curr]} className="w-full"alt="Image 1"/>
                     </div>
                 </div>
 
@@ -167,25 +71,8 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+    </div>
+  )
+}
 
-    <script>
-        // JavaScript for Auto-Switching Image Carousel
-        let slideIndex = 0;
-
-        function showSlides() {
-            let slides = document.querySelectorAll(".carousel-images img");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  // Hide all images
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;  // Loop back to the first image
-            }
-            slides[slideIndex - 1].style.display = "block";  // Show the current image
-            setTimeout(showSlides, 2000);  // Change image every 2 seconds
-        }
-
-        showSlides();  // Initial call to start the carousel
-    </script>
-</body>
-</html>
+export default Education

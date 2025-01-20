@@ -1,135 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reject Finance Bill 2024: A Tale of Resistance and Repression</title>
-    <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* Image Styles for Carousel */
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-height: 400px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .carousel img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel img:not(:first-child) {
-            display: none; /* Hide other images by default */
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-<body>
+import React, {useEffect, useState} from 'react'
+import img1 from "../assets/images/reject1.jpg"
+import img2 from "../assets/images/rex.jpg" 
+import {NavLink } from "react-router-dom"
+import { BiHomeAlt2 as Home } from "react-icons/bi";
+const Rejectbill = () => {
+    const slides = [img1, img2]
+    const [curr, setCurr] = useState(0)
+    const prev = () => {
+        setCurr((curr) => curr == 0 ? slides.length - 1 : curr -1)
+    }
+    const next= () => {
+        setCurr((curr) => curr ==slides.length-1 ? 0 : curr + 1)
+    }
+    useEffect(() => {
+        const scroll = false
+        if(scroll){return console.log("no scroll")}
+        const slideInterval = setInterval(next, 3000)
+        return () => clearInterval(slideInterval)
+    }, [])
+  return (
+    <div id='bill'>
     <header>
         <h1>Reject Finance Bill 2024: A Tale of Resistance and Repression</h1>
     </header>
-
+   {/* redirect home */}
+   <NavLink to="/" className="fixed bottom-40 right-10 bg-sky-800 p-1 w-fit rounded-full text-white font-extrabold">
+            <Home/>
+        </NavLink>
     <main>
         <div class="container">
             <article>
-                <!-- Carousel -->
+                {/* <!-- Carousel --> */}
                 <div class="carousel">
-                    <img src="../Assets/reject1.jpg" alt="Protest Against Finance Bill" />
-                    <img src="../Assets/rex.jpg" alt="Police Clash During Protests" />
+                    <img src={slides[curr]} alt="Protest Against Finance Bill" />
                 </div>
 
                 <p>
@@ -163,23 +66,8 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+</div>
+  )
+}
 
-    <script>
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll(".carousel img"); // Select all images in the carousel
-
-        // Function to change the image every 2 seconds
-        function changeImage() {
-            // Hide all images
-            images.forEach(img => img.style.display = "none");
-            
-            // Show the next image
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            images[currentImageIndex].style.display = "block";
-        }
-
-        // Set interval to change image every 2 seconds (2000 milliseconds)
-        setInterval(changeImage, 2000);
-    </script>
-</body>
-</html>
+export default Rejectbill

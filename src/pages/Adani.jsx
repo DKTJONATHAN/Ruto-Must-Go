@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adani's Kenyan Venture: A Tale of Corruption and Leadership Failure</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file you will use for all pages -->
-    <style>
-        /* Add your styles here (or in your linked CSS) */
-
-        /* Image Carousel Styles */
-        .carousel-container {
-            position: relative;
-            max-width: 100%;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
-
-        .carousel-images img {
-            max-width: 100%;
-            border-radius: 10px;
-            display: block;
-        }
-
-    </style>
-</head>
-<body>
+import React, {useState, useEffect} from 'react'
+import adani1 from "../assets/images/adani1.jpg"
+import adani2 from "../assets/images/adani2.avif"
+import {NavLink} from "react-router-dom"
+import { BiHomeAlt2 as Home } from "react-icons/bi";
+const Adani = () => {
+    const slides = [adani1, adani2]
+    const [curr, setCurr] = useState(0)
+    const prev = () => {
+        setCurr((curr) => curr == 0 ? slides.length - 1 : curr -1)
+    }
+    const next= () => {
+        setCurr((curr) => curr ==slides.length-1 ? 0 : curr + 1)
+    }
+    useEffect(() => {
+        const scroll = false
+        if(scroll){return console.log("no scroll")}
+        const slideInterval = setInterval(next, 3000)
+        return () => clearInterval(slideInterval)
+    }, [])
+  return (
+    <div id="bill">
     <header>
         <h1>Adani's Kenyan Venture: A Tale of Corruption and Leadership Failure</h1>
     </header>
-
+   {/* redirect home */}
+   <NavLink to="/" className="fixed bottom-40 right-10 bg-sky-800 p-1 w-fit rounded-full text-white font-extrabold">
+            <Home/>
+        </NavLink>
     <main>
         <div class="container">
             <article>
@@ -42,11 +34,10 @@
                     The saga of Gautam Adani's business dealings in Kenya under President William Ruto's administration has become emblematic of governance failure and potential corruption. Adani, an Indian billionaire, was poised to take over key Kenyan infrastructure, including Jomo Kenyatta International Airport (JKIA) and power transmission lines under controversial deals.
                 </p>
                 
-                <!-- Image Carousel with automatic switching of images every 2 seconds -->
-                <div class="carousel-container">
-                    <div class="carousel-images">
-                        <img src="../Assets/adani1.jpg" alt="Image 1">
-                        <img src="../Assets/adani2.avif" alt="Image 2">
+                {/* <!-- Image Carousel with automatic switching of images every 2 seconds --> */}
+                <div className="carousel-container">
+                    <div className="carousel-images">
+                    <img src={slides[curr]} className="w-full"alt="Protest Image 1"/>
                     </div>
                 </div>
 
@@ -78,25 +69,8 @@
     <footer>
         <p>© 2025 Ruto Must Go</p>
     </footer>
+    </div>
+  )
+}
 
-    <script>
-        // JavaScript for Auto-Switching Image Carousel
-        let slideIndex = 0;
-
-        function showSlides() {
-            let slides = document.querySelectorAll(".carousel-images img");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  // Hide all images
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;  // Loop back to the first image
-            }
-            slides[slideIndex - 1].style.display = "block";  // Show the current image
-            setTimeout(showSlides, 2000);  // Change image every 2 seconds
-        }
-
-        showSlides();  // Initial call to start the carousel
-    </script>
-</body>
-</html>
+export default Adani
