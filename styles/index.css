@@ -33,7 +33,8 @@
   
   /* Enhanced Navbar */
   .frame1 {
-    position: fixed;
+    position: sticky;
+    position: -webkit-sticky;
     top: 0;
     width: 100%;
     display: flex;
@@ -41,14 +42,27 @@
     align-items: center;
     padding: 1rem 2rem;
     background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     z-index: 1000;
   }
   
+  .navbar-section1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar-section1 .menu{
+    display: none;
+    cursor: pointer;
+  }
+
   .navbar-section1 h2 {
     font-size: 1.8rem;
     margin: 0;
     color: var(--primary-color);
+    cursor: pointer;
   }
   
   .navbar-section2 ul {
@@ -77,7 +91,6 @@
   /* Modern Hero Section */
   .frame2 {
     position: relative;
-    margin-top: 70px;
     height: 70vh;
     overflow: hidden;
   }
@@ -181,24 +194,32 @@
   }
   
   /* Enhanced Topics Section */
+  .frame4{
+    margin: 0 2rem;
+  }
+  h1{
+    text-transform: capitalize;
+  }
+
   .frame4-top-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 0.25rem;
   }
   
   .card1 {
     background: var(--card-bg);
-    padding: 1rem;
+    padding: 0.25rem 1rem;
     text-align: center;
     border-radius: 50px;
-    transition: all var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;    
+    transform: scale(0.9);
   }
   
   .card1:hover {
     background: var(--primary-color);
-    transform: scale(1.05);
+    transform: scale(1);
   }
   
   /* Modern Footer Layout */
@@ -212,6 +233,13 @@
   .col ul {
     padding: 0;
     list-style: none;
+  }
+
+  .lastchild{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 1.5rem;
   }
   
   .col li {
@@ -232,14 +260,29 @@
   
   /* Mobile Responsiveness */
   @media (max-width: 768px) {
+    .fram1{
+      margin: 0 auto;
+      padding: 0;
+    }
     .navbar-section2 {
       position: absolute;
-      top: 100%;
+      top: 0;
       left: 0;
       right: 0;
       background: var(--dark-bg);
       padding: 1rem;
       display: none;
+      min-height: 100vh;
+    }
+
+
+    .navbar-section2 ul{
+      display: block;
+      padding: 1rem 0;
+    }
+
+    .navbar-section1 .menu{
+      display: inline-block;
     }
   
     .navbar-section2.active {

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const menu = document.getElementById('menu');
-    const navList = document.querySelector('.navbar-section2 ul');
+    const navList = document.querySelector('.navbar-section2');
     
     menu.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -23,5 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
           behavior: 'smooth'
         });
       });
+    });
+
+    // Update the footer year automatically
+    const getDate = document.getElementById("getDate");
+    getDate.innerHTML = new Date().getFullYear();
+
+    // Toggle menu visibility on mobile
+    const menuIcon = document.getElementById('menu');
+    const navbarList = document.querySelector('.navbar-section2 ul'); // Select the <ul> in navbar-section2
+
+    menuIcon.addEventListener('click', () => {
+        navbarList.classList.toggle('active'); // Add or remove the 'active' class to toggle visibility
     });
   });
