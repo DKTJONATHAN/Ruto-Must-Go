@@ -1,188 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gen Z Protests in Kenya: A New Dawn</title>
+    <title>Gen Z Protests in Kenya: A New Dawn | Ruto Must Go</title>
+    <link rel="icon" href="./public/external/icc.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
         }
-
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
         }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
         }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Image Carousel Styles */
-        .carousel-container {
+        .carousel {
             position: relative;
-            max-width: 100%;
-            margin-bottom: 30px;
-            border-radius: 10px;
             overflow: hidden;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
         }
-
-        .carousel-images {
+        .carousel-inner {
             display: flex;
-            transition: transform 1s ease-in-out;
+            transition: transform 0.5s ease;
         }
-
-        .carousel-images img {
-            max-width: 100%;
-            border-radius: 10px;
+        .carousel-item {
+            min-width: 100%;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: auto;
             display: block;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-control.prev {
+            left: 10px;
+        }
+        .carousel-control.next {
+            right: 10px;
+        }
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .carousel-indicator.active {
+            background: white;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Gen Z Protests in Kenya: A New Dawn</h1>
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <header class="bg-red-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-bold font-montserrat">RutoMustGo</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+                <a href="Blogs/politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="Blogs/corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="Blogs/abductions.html" class="hover:text-gray-200 transition">Abductions</a>
+                <a href="Blogs/murders.html" class="hover:text-gray-200 transition">Murders</a>
+                <a href="Blogs/adani.html" class="hover:text-gray-200 transition">Adani Scandal</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="hover:text-gray-200 transition">Finance Bill</a>
+                <a href="Blogs/genzprotests.html" class="hover:text-gray-200 transition">GenZ Protests</a>
+                <a href="Blogs/society.html" class="hover:text-gray-200 transition">Society</a>
+                <a href="Blogs/health.html" class="hover:text-gray-200 transition">Health</a>
+                <a href="Blogs/fufuaicc.html" class="hover:text-gray-200 transition">Fufu AI CC</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="md:hidden hamburger focus:outline-none" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-red-800" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
+                <a href="Blogs/politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="Blogs/corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="Blogs/abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
+                <a href="Blogs/murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="Blogs/adani.html" class="py-2 hover:bg-red-700 px-2 rounded">Adani Scandal</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="py-2 hover:bg-red-700 px-2 rounded">Finance Bill</a>
+                <a href="Blogs/genzprotests.html" class="py-2 hover:bg-red-700 px-2 rounded">GenZ Protests</a>
+                <a href="Blogs/society.html" class="py-2 hover:bg-red-700 px-2 rounded">Society</a>
+                <a href="Blogs/health.html" class="py-2 hover:bg-red-700 px-2 rounded">Health</a>
+                <a href="Blogs/fufuaicc.html" class="py-2 hover:bg-red-700 px-2 rounded">Fufu AI CC</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <div class="container">
-            <article>
-                <!-- Image Carousel with automatic switching of images every 2 seconds -->
-                <div class="carousel-container">
-                    <div class="carousel-images">
-                        <img src="../Assets/maandamano1.webp" alt="Protest Image 1">
-                        <img src="../Assets/maandamano2.jpg" alt="Protest Image 2">
+    <main class="py-8">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Article Header -->
+            <div class="mb-8">
+                <span class="text-red-600 font-bold">GENZ PROTESTS</span>
+                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-montserrat">Gen Z Protests in Kenya: A New Dawn</h1>
+                <div class="flex items-center space-x-4 text-gray-600">
+                    <span>By RutoMustGo Team</span>
+                    <span>•</span>
+                    <span>January 19, 2025</span>
+                </div>
+            </div>
+
+            <!-- Featured Image Carousel -->
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="../Assets/maandamano1.webp" alt="Gen Z Protesters in Nairobi">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Assets/maandamano2.jpg" alt="Youth occupying Parliament">
                     </div>
                 </div>
+                <button class="carousel-control prev" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-control next" onclick="moveSlide(1)">❯</button>
+                <div class="carousel-indicators">
+                    <span class="carousel-indicator active" onclick="goToSlide(0)"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(1)"></span>
+                </div>
+            </div>
 
-                <p>
-                    In June 2024, Kenyan Generation Z, often referred to as Gen Z, initiated a movement that would go down in history as one of the most impactful protests in Kenya. It all started over the contentious Finance Bill 2024, which proposed significant tax increases, seen by many as burdensome on the youth and working class. 
+            <!-- Article Content -->
+            <div class="article-content bg-white p-6 md:p-8 rounded-lg shadow-sm">
+                <p class="font-medium text-lg">
+                    In June 2024, Kenya's Generation Z launched a historic protest movement that redefined civic engagement, using digital tools to organize mass demonstrations that successfully forced the government to withdraw the oppressive Finance Bill 2024.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">The Digital Revolution</h2>
                 <p>
-                    Harnessing the power of technology, Gen Z utilized platforms like TikTok and X to spread their message. On TikTok, short, engaging videos explained the implications of the bill in a language that resonated with the youth, using humor, music, and direct calls to action. X became a hub for real-time updates, coordination, and the sharing of protest logistics, with hashtags like #RejectFinanceBill2024 trending nationwide.
+                    Kenyan Gen Z transformed social media into a powerful organizing tool, with TikTok becoming their primary weapon. Through viral videos that mixed humor with hard facts, they educated millions about the Finance Bill's devastating impacts. On X (formerly Twitter), Spaces became virtual war rooms where protest strategies were debated and refined in real-time.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">#RejectFinanceBill2024</h2>
                 <p>
-                    The movement was not just about posting; it was about organizing. Spaces on X (formerly Twitter) became virtual town halls where strategies were discussed, legal advice was shared, and plans for peaceful demonstrations were laid out. These digital gatherings allowed for a decentralized yet cohesive approach to activism, something unprecedented in Kenyan protest culture.
+                    What began as an online campaign exploded into the streets with unprecedented speed. The #RejectFinanceBill2024 hashtag became a rallying cry, trending for weeks as Gen Z coordinated nationwide demonstrations through encrypted channels and social media platforms, bypassing traditional organizing structures.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">The Parliament Occupation</h2>
                 <p>
-                    What made these protests stand out was the audacity and bravery of Gen Z. They did what had never been done in Kenya's history: they occupied Parliament. On June 25, 2024, after weeks of online mobilization, thousands of young Kenyans marched to the Parliament buildings in Nairobi, breaching security and entering the hallowed chambers where laws are made. This act of defiance was a direct challenge to those in power, symbolizing a new era of youth engagement in governance.
+                    On June 25, 2024, Kenyan youth made history by storming and occupying Parliament - an act of defiance never before seen in the country. This bold move, live-streamed on social media, became the defining image of the protests, symbolizing the people's reclamation of power from an out-of-touch political class.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Creative Resistance</h2>
                 <p>
-                    The Kenyan Gen Z has been hailed as the most courageous generation in recent history for their fearless approach to demanding change. Their actions led to immediate effects - the Finance Bill was withdrawn, and the government was forced to reconsider its approach to youth and economic policy. 
+                    The protests were marked by extraordinary creativity - from protest art and memes to revolutionary songs and poetry. Even in the face of police brutality, the youth maintained their non-violent discipline, using dance and music as weapons of resistance that captured global attention.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Digital Documentation</h2>
                 <p>
-                    The protests were marked by creativity, resilience, and an unwavering commitment to non-violence, despite facing police brutality. They sang, danced, and used art and poetry to articulate their grievances, turning what could have been another dark chapter into a moment of national awakening and pride.
+                    Gen Z's tech-savvy approach ensured every police brutality incident was documented and shared globally. Citizen journalists used smartphones to livestream the crackdowns, creating an irrefutable record of state violence that forced international intervention and accountability.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">The Aftermath</h2>
                 <p>
-                    Gen Z's use of social media was not just for mobilization but also for documenting abuses, providing first-hand accounts of the protests, and ensuring international attention, which put additional pressure on the government to respond. This digital footprint has been crucial in holding authorities accountable, both locally and globally.
+                    The movement's success in forcing the bill's withdrawal proved the power of youth-led digital activism. More importantly, it established Gen Z as Kenya's new political vanguard, with the #RutoMustGo movement emerging as their next target in the fight for systemic change.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">A Continental Wave</h2>
                 <p>
-                    In conclusion, the Gen Z protests of 2024 have rewritten the narrative of Kenyan activism. By leveraging technology, showing unprecedented bravery, and occupying Parliament, they have set a new standard for civic engagement. Their actions have not only altered the course of policy-making but have also inspired a wave of activism across Africa, proving that the youth are not just the future but very much the present in shaping democracy and governance.
+                    Kenya's Gen Z protests inspired similar movements across Africa, from Nigeria to South Africa, demonstrating how digital-native youth can challenge authoritarian regimes using technology as their primary weapon against state repression.
                 </p>
-            </article>
-        </div>
+                
+                <p class="font-medium mt-8">
+                    The 2024 Gen Z protests marked Kenya's political awakening of a new generation - one that refuses to be silenced, that wields technology as effectively as previous generations wielded stones, and that has proven capable of toppling oppressive policies through sheer collective will. Their occupation of Parliament wasn't just a protest - it was a declaration that Kenya's future belongs to its youth.
+                </p>
+            </div>
+        </article>
     </main>
 
-    <footer>
-        <p>© 2025 Ruto Must Go</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
+                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                    <p class="mt-4">&copy;<span id="getDate"></span>. All Rights Reserved.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Blogs/politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="Blogs/corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
+                        <li><a href="Blogs/abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
+                        <li><a href="Blogs/murders.html" class="hover:text-red-400 transition">Murders</a></li>
+                        <li><a href="Blogs/genzprotests.html" class="hover:text-red-400 transition">GenZ Protests</a></li>
+                        <li><a href="Blogs/rejectfinancebill2024.html" class="hover:text-red-400 transition">Finance Bill</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // JavaScript for Auto-Switching Image Carousel
-        let slideIndex = 0;
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        function showSlides() {
-            let slides = document.querySelectorAll(".carousel-images img");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  // Hide all images
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;  // Loop back to the first image
-            }
-            slides[slideIndex - 1].style.display = "block";  // Show the current image
-            setTimeout(showSlides, 2000);  // Change image every 2 seconds
+        // Set current year in footer
+        document.getElementById('getDate').textContent = new Date().getFullYear();
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
         }
 
-        showSlides();  // Initial call to start the carousel
+        function moveSlide(n) {
+            currentSlide = (currentSlide + n + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            updateCarousel();
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(() => moveSlide(1), 5000);
     </script>
 </body>
 </html>
