@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abductions Under William Ruto's Presidency | Ruto Must Go</title>
+    <link rel="icon" href="./public/external/icc.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         .hamburger span {
             display: block;
@@ -30,51 +32,44 @@
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
-        .font-heading {
-            font-family: 'Montserrat', sans-serif;
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
         }
-        .bg-primary {
-            background-color: #991b1b; /* red-800 */
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
         }
-        .bg-secondary {
-            background-color: #7f1d1d; /* red-900 */
-        }
-        .bg-dark {
-            background-color: #111827; /* gray-900 */
-        }
-        .bg-light {
-            background-color: #f9fafb; /* gray-50 */
-        }
-        .text-light {
-            color: #f9fafb; /* gray-50 */
-        }
-        .text-dark {
-            color: #111827; /* gray-900 */
-        }
-        .text-primary {
-            color: #991b1b; /* red-800 */
-        }
-        .text-secondary {
-            color: #7f1d1d; /* red-900 */
+        .carousel-images img {
+            max-width: 100%;
+            border-radius: 10px;
+            display: block;
         }
     </style>
 </head>
-<body class="font-sans bg-light text-dark">
+<body class="font-sans bg-gray-50 text-gray-900">
     <!-- Navigation -->
-    <header class="bg-primary text-light shadow-lg sticky top-0 z-50">
+    <header class="bg-red-700 text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <span class="material-symbols-outlined menu hidden md:block mr-2">menu</span>
-                <a href="index.html" class="text-xl font-bold font-heading">RutoMustGo</a>
+                <a href="index.html" class="text-xl font-bold font-montserrat">RutoMustGo</a>
             </div>
             
             <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-6" id="desktop-nav">
-                <a href="index.html" class="hover:text-gray-300 transition">Home</a>
-                <a href="politics.html" class="hover:text-gray-300 transition">Politics</a>
-                <a href="corruption.html" class="hover:text-gray-300 transition">Corruption</a>
-                <a href="murders.html" class="hover:text-gray-300 transition">Murders</a>
-                <a href="abductions.html" class="hover:text-gray-300 transition font-bold">Abductions</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+                <a href="Blogs/politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="Blogs/corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="Blogs/abductions.html" class="hover:text-gray-200 transition font-bold">Abductions</a>
+                <a href="Blogs/murders.html" class="hover:text-gray-200 transition">Murders</a>
+                <a href="Blogs/adani.html" class="hover:text-gray-200 transition">Adani Scandal</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="hover:text-gray-200 transition">Finance Bill</a>
+                <a href="Blogs/genzprotests.html" class="hover:text-gray-200 transition">GenZ Protests</a>
+                <a href="Blogs/society.html" class="hover:text-gray-200 transition">Society</a>
+                <a href="Blogs/health.html" class="hover:text-gray-200 transition">Health</a>
+                <a href="Blogs/fufuaicc.html" class="hover:text-gray-200 transition">Fufu AI CC</a>
             </nav>
             
             <!-- Mobile Hamburger Menu -->
@@ -86,24 +81,30 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-secondary" id="mobile-menu">
+        <div class="md:hidden hidden bg-red-800" id="mobile-menu">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
                 <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
-                <a href="politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
-                <a href="corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
-                <a href="murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
-                <a href="abductions.html" class="py-2 hover:bg-red-700 px-2 rounded font-bold">Abductions</a>
+                <a href="Blogs/politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="Blogs/corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="Blogs/abductions.html" class="py-2 hover:bg-red-700 px-2 rounded font-bold">Abductions</a>
+                <a href="Blogs/murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="Blogs/adani.html" class="py-2 hover:bg-red-700 px-2 rounded">Adani Scandal</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="py-2 hover:bg-red-700 px-2 rounded">Finance Bill</a>
+                <a href="Blogs/genzprotests.html" class="py-2 hover:bg-red-700 px-2 rounded">GenZ Protests</a>
+                <a href="Blogs/society.html" class="py-2 hover:bg-red-700 px-2 rounded">Society</a>
+                <a href="Blogs/health.html" class="py-2 hover:bg-red-700 px-2 rounded">Health</a>
+                <a href="Blogs/fufuaicc.html" class="py-2 hover:bg-red-700 px-2 rounded">Fufu AI CC</a>
             </div>
         </div>
     </header>
 
     <main class="py-8">
-        <div class="container mx-auto px-4 max-w-4xl">
+        <article class="container mx-auto px-4 max-w-4xl">
             <!-- Article Header -->
-            <div class="mb-8 text-center">
-                <span class="text-primary font-bold">ABDUCTIONS</span>
-                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-heading">Abductions Under William Ruto's Presidency</h1>
-                <div class="flex justify-center space-x-4 text-gray-600">
+            <div class="mb-8">
+                <span class="text-red-600 font-bold">ABDUCTIONS</span>
+                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-montserrat">Abductions Under William Ruto's Presidency</h1>
+                <div class="flex items-center space-x-4 text-gray-600">
                     <span>By Anonymous</span>
                     <span>•</span>
                     <span>January 19, 2025</span>
@@ -111,79 +112,95 @@
             </div>
 
             <!-- Image Carousel -->
-            <div class="relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
-                <img src="Assets/abdction1.jpg" alt="Abduction Scene" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100">
-                <img src="Assets/abductions2.webp" alt="Protests Against Ruto" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+            <div class="mb-8 rounded-lg overflow-hidden relative">
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="Assets/abdction1.jpg" alt="Abduction scene showing police brutality" class="w-full h-auto">
+                        <img src="Assets/abductions2.webp" alt="Protests against government abductions" class="w-full h-auto">
+                    </div>
+                </div>
             </div>
 
             <!-- Article Content -->
             <div class="article-content bg-white p-6 md:p-8 rounded-lg shadow-sm">
-                <p class="mb-4">
-                    Since William Ruto became the President of Kenya, there has been a marked increase in abductions, mostly targeting individuals who are critical of the government, activists, and those involved in political dissent. This issue has drawn considerable attention from human rights organizations, local citizens, and international observers, with numerous reports detailing the alarming trend.
-                </p>
-                <p class="mb-4">
-                    The number of abductions has indeed spiked, with many victims vanishing without any trace or explanation. Families have been left in distress, seeking answers and justice, with many feeling neglected by the authorities. Notable victims include critics like Kibet Bull, Billy Mwangi, and others who have publicly opposed or criticized government policies or actions.
-                </p>
-                <p class="mb-4">
-                    The Ruto administration has repeatedly denied any direct involvement in these abductions. Government officials have publicly stated their commitment to human rights and citizen safety, but skepticism remains high among the public and rights groups. Critics argue that the government's response lacks the urgency and transparency needed to address what has become a human rights crisis.
-                </p>
-                <p class="mb-4">
-                    Human rights organizations, including Amnesty International and Human Rights Watch, have been vocal, demanding thorough investigations and accountability. They have highlighted numerous cases where individuals have been detained without legal basis, often in secret locations, and have called for protective measures for those at risk.
-                </p>
-                <p class="mb-4">
-                    The fear of abduction has instilled a chilling effect on Kenyan society. There's a growing hesitance among citizens to express dissent or engage in political discussions publicly, which threatens the fabric of democracy by limiting free speech. This atmosphere of fear is believed to suppress public discourse and activism, crucial elements for a vibrant civil society.
-                </p>
-                <p class="mb-4">
-                    The hashtag #RutoMustGo has gained traction, reflecting public frustration with the ongoing abductions. Many argue that only a change in leadership can restore trust in the government's commitment to human rights. Discussions often revolve around the need for systemic change to ensure that such violations do not continue unchecked.
-                </p>
-                <p class="mb-4">
-                    Moreover, there has been significant coverage about the government's response to these allegations. Some reports indicate that the administration has occasionally admitted to police excesses but frames these as isolated incidents rather than systemic issues. Others highlight the government's apparent inaction or slow response in locating and ensuring the safety of those who have been abducted like Kibet Bull and Billy Mwangi.
-                </p>
-                <p class="mb-4">
-                    The Kenyan National Commission on Human Rights has documented numerous cases, fueling ongoing debates about governance, rule of law, and the state of democracy under Ruto's leadership. There's also a call for more international pressure to address these human rights concerns, with stories of international leaders and organizations expressing concern over the situation in Kenya.
-                </p>
-                <p class="mb-4">
-                    In conclusion, while the government insists on its commitment to human rights, the reality on the ground suggests a different narrative. The public's demand for accountability, transparency, and justice continues to grow, highlighting the urgent need for action to prevent further erosion of democratic values in Kenya.
-                </p>
+                <p class="font-semibold text-lg">Since William Ruto became the President of Kenya, there has been a marked increase in abductions, mostly targeting individuals who are critical of the government, activists, and those involved in political dissent.</p>
+                
+                <p>The number of abductions has indeed spiked, with many victims vanishing without any trace or explanation. Families have been left in distress, seeking answers and justice, with many feeling neglected by the authorities. Notable victims include critics like Kibet Bull, Billy Mwangi, and others who have publicly opposed or criticized government policies or actions.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Government Denials and Public Skepticism</h2>
+                
+                <p>The Ruto administration has repeatedly denied any direct involvement in these abductions. Government officials have publicly stated their commitment to human rights and citizen safety, but skepticism remains high among the public and rights groups. Critics argue that the government's response lacks the urgency and transparency needed to address what has become a human rights crisis.</p>
+                
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 my-6">
+                    <p class="font-medium">Human rights organizations, including Amnesty International and Human Rights Watch, have been vocal, demanding thorough investigations and accountability. They have highlighted numerous cases where individuals have been detained without legal basis, often in secret locations.</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Chilling Effect on Kenyan Society</h2>
+                
+                <p>The fear of abduction has instilled a chilling effect on Kenyan society. There's a growing hesitance among citizens to express dissent or engage in political discussions publicly, which threatens the fabric of democracy by limiting free speech. This atmosphere of fear is believed to suppress public discourse and activism, crucial elements for a vibrant civil society.</p>
+                
+                <div class="my-6 p-4 bg-gray-100 rounded-lg">
+                    <p>"The hashtag <strong>#RutoMustGo</strong> has gained traction, reflecting public frustration with the ongoing abductions. Many argue that only a change in leadership can restore trust in the government's commitment to human rights."</p>
+                </div>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Government Response and International Concern</h2>
+                
+                <p>Moreover, there has been significant coverage about the government's response to these allegations. Some reports indicate that the administration has occasionally admitted to police excesses but frames these as isolated incidents rather than systemic issues. Others highlight the government's apparent inaction or slow response in locating and ensuring the safety of those who have been abducted like Kibet Bull and Billy Mwangi.</p>
+                
+                <p>The Kenyan National Commission on Human Rights has documented numerous cases, fueling ongoing debates about governance, rule of law, and the state of democracy under Ruto's leadership. There's also a call for more international pressure to address these human rights concerns, with stories of international leaders and organizations expressing concern over the situation in Kenya.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Conclusion</h2>
+                
+                <p>In conclusion, while the government insists on its commitment to human rights, the reality on the ground suggests a different narrative. The public's demand for accountability, transparency, and justice continues to grow, highlighting the urgent need for action to prevent further erosion of democratic values in Kenya.</p>
+                
+                <div class="mt-8 p-4 bg-red-50 rounded-lg">
+                    <h3 class="font-bold text-lg mb-2">Notable Abduction Cases:</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Kibet Bull</strong> - Disappeared after criticizing government policies</li>
+                        <li><strong>Billy Mwangi</strong> - Activist abducted after organizing protests</li>
+                        <li><strong>Multiple GenZ protesters</strong> - Vanished during #RejectFinanceBill demonstrations</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </article>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-light py-12">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4 font-heading">RutoMustGo</h3>
+                    <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
                     <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                    <p class="mt-4">&copy;<span id="getDate"></span>. All Rights Reserved.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Categories</h4>
                     <ul class="space-y-2">
-                        <li><a href="politics.html" class="hover:text-primary transition">Politics</a></li>
-                        <li><a href="corruption.html" class="hover:text-primary transition">Corruption</a></li>
-                        <li><a href="abductions.html" class="hover:text-primary transition">Abductions</a></li>
+                        <li><a href="Blogs/politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="Blogs/corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
+                        <li><a href="Blogs/abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
+                        <li><a href="Blogs/murders.html" class="hover:text-red-400 transition">Murders</a></li>
+                        <li><a href="Blogs/genzprotests.html" class="hover:text-red-400 transition">GenZ Protests</a></li>
+                        <li><a href="Blogs/rejectfinancebill2024.html" class="hover:text-red-400 transition">Finance Bill</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Follow Us</h4>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-primary transition"><i class="bi-facebook"></i></a>
-                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-primary transition"><i class="bi-twitter"></i></a>
-                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-primary transition"><i class="bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p>&copy; 2025 RutoMustGo. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -192,33 +209,39 @@
         // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const desktopNav = document.getElementById('desktop-nav');
-        const materialMenu = document.querySelector('.material-symbols-outlined.menu');
         
         menuBtn.addEventListener('click', () => {
             menuBtn.classList.toggle('active');
             mobileMenu.classList.toggle('hidden');
         });
 
-        materialMenu?.addEventListener('click', () => {
-            desktopNav.classList.toggle('hidden');
-        });
+        // Set current year in footer
+        document.getElementById('getDate').textContent = new Date().getFullYear();
+        
+        // Image carousel functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".carousel-images img");
+        const totalSlides = slides.length;
 
-        // Image carousel
-        const images = document.querySelectorAll('.relative img');
-        if (images.length > 0) {
-            let currentIndex = 0;
-
-            setInterval(() => {
-                images[currentIndex].classList.remove('opacity-100');
-                images[currentIndex].classList.add('opacity-0');
-
-                currentIndex = (currentIndex + 1) % images.length;
-
-                images[currentIndex].classList.remove('opacity-0');
-                images[currentIndex].classList.add('opacity-100');
-            }, 5000);
+        function showSlides() {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.style.display = "none";
+            });
+            
+            // Show current slide
+            slideIndex++;
+            if (slideIndex > totalSlides) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            
+            // Change slide every 5 seconds
+            setTimeout(showSlides, 5000);
         }
+
+        // Initialize carousel
+        showSlides();
     </script>
 </body>
 </html>
