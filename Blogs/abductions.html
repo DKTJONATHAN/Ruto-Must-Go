@@ -1,73 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abductions Under William Ruto's Presidency</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <!-- Same head as homepage for consistency -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
-<body>
+<body class="font-sans bg-light text-dark">
+    <!-- Same header as homepage -->
     <header>
-        <h1>Abductions Under William Ruto's Presidency</h1>
+        <div class="bg-primary text-light p-4 flex items-center">
+            <span class="material-symbols-outlined menu hidden md:block mr-4" id="menu">menu</span>
+            <h2 class="text-xl font-heading">Ruto Must Go</h2>
+        </div>
+        
+        <nav class="bg-secondary">
+            <ul class="flex justify-center" id="navbar-list">
+                <li class="p-4"><a href="/" class="text-light hover:text-primary transition">Home</a></li>
+                <li class="p-4"><a href="politics.html" class="text-light hover:text-primary transition">Politics</a></li>
+                <li class="p-4"><a href="corruption.html" class="text-light hover:text-primary transition">Corruption</a></li>
+                <li class="p-4"><a href="murders.html" class="text-light hover:text-primary transition">Murders</a></li>
+                <li class="p-4"><a href="abductions.html" class="text-light hover:text-primary transition font-bold">Abductions</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <div class="container">
-            <article>
-                <div class="image-carousel">
-                    <img src="../Assets/abdction1.jpg" alt="Abduction Scene" class="carousel-image">
-                    <img src="../Assets/abductions2.webp" alt="Protests Against Ruto" class="carousel-image" style="display:none;">
-                </div>
-                
-                <div class="article-meta">
+    <main class="py-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Article Header -->
+            <div class="mb-8 text-center">
+                <h1 class="text-3xl md:text-4xl font-heading text-secondary mb-4">Abductions Under William Ruto's Presidency</h1>
+                <div class="flex justify-center space-x-4 text-sm text-gray-500">
                     <span>Author: Anonymous</span>
                     <span>Date: January 19, 2025</span>
                 </div>
+            </div>
 
-                <p>
+            <!-- Image Carousel -->
+            <div class="relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
+                <img src="../Assets/abdction1.jpg" alt="Abduction Scene" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+                <img src="../Assets/abductions2.webp" alt="Protests Against Ruto" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+            </div>
+
+            <!-- Article Content -->
+            <article class="prose prose-lg max-w-none">
+                <p class="mb-4">
                     Since William Ruto became the President of Kenya, there has been a marked increase in abductions, mostly targeting individuals who are critical of the government, activists, and those involved in political dissent. This issue has drawn considerable attention from human rights organizations, local citizens, and international observers, with numerous reports detailing the alarming trend.
                 </p>
-                <p>
+                <p class="mb-4">
                     The number of abductions has indeed spiked, with many victims vanishing without any trace or explanation. Families have been left in distress, seeking answers and justice, with many feeling neglected by the authorities. Notable victims include critics like Kibet Bull, Billy Mwangi, and others who have publicly opposed or criticized government policies or actions.
                 </p>
-                <p>
+                <p class="mb-4">
                     The Ruto administration has repeatedly denied any direct involvement in these abductions. Government officials have publicly stated their commitment to human rights and citizen safety, but skepticism remains high among the public and rights groups. Critics argue that the government's response lacks the urgency and transparency needed to address what has become a human rights crisis.
                 </p>
-                <p>
+                <p class="mb-4">
                     Human rights organizations, including Amnesty International and Human Rights Watch, have been vocal, demanding thorough investigations and accountability. They have highlighted numerous cases where individuals have been detained without legal basis, often in secret locations, and have called for protective measures for those at risk.
                 </p>
-                <p>
+                <p class="mb-4">
                     The fear of abduction has instilled a chilling effect on Kenyan society. There's a growing hesitance among citizens to express dissent or engage in political discussions publicly, which threatens the fabric of democracy by limiting free speech. This atmosphere of fear is believed to suppress public discourse and activism, crucial elements for a vibrant civil society.
                 </p>
-                <p>
+                <p class="mb-4">
                     The hashtag #RutoMustGo has gained traction, reflecting public frustration with the ongoing abductions. Many argue that only a change in leadership can restore trust in the government's commitment to human rights. Discussions often revolve around the need for systemic change to ensure that such violations do not continue unchecked.
                 </p>
-                <p>
+                <p class="mb-4">
                     Moreover, there has been significant coverage about the government's response to these allegations. Some reports indicate that the administration has occasionally admitted to police excesses but frames these as isolated incidents rather than systemic issues. Others highlight the government's apparent inaction or slow response in locating and ensuring the safety of those who have been abducted like Kibet Bull and Billy Mwangi.
                 </p>
-                <p>
+                <p class="mb-4">
                     The Kenyan National Commission on Human Rights has documented numerous cases, fueling ongoing debates about governance, rule of law, and the state of democracy under Ruto's leadership. There's also a call for more international pressure to address these human rights concerns, with stories of international leaders and organizations expressing concern over the situation in Kenya.
                 </p>
-                <p>
+                <p class="mb-4">
                     In conclusion, while the government insists on its commitment to human rights, the reality on the ground suggests a different narrative. The public's demand for accountability, transparency, and justice continues to grow, highlighting the urgent need for action to prevent further erosion of democratic values in Kenya.
                 </p>
             </article>
         </div>
     </main>
 
-    <footer>
-        <p>© 2025 Ruto Must Go</p>
+    <!-- Same footer as homepage -->
+    <footer class="bg-dark text-light py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h2 class="text-xl font-heading text-primary mb-4">Ruto Must Go</h2>
+                <p class="mb-4">Your trusted source for news and analysis</p>
+                <p>&copy; 2025. All Rights Reserved.</p>
+            </div>
+            
+            <div>
+                <h2 class="text-xl font-heading text-primary mb-4">Quick Links</h2>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-primary transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Advertise</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2 class="text-xl font-heading text-primary mb-4">Categories</h2>
+                <ul class="space-y-2">
+                    <li><a href="politics.html" class="hover:text-primary transition">Politics</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Economy</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Society</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2 class="text-xl font-heading text-primary mb-4">Follow Us</h2>
+                <ul class="flex space-x-4">
+                    <li><a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-primary transition"><i class="bi-facebook"></i></a></li>
+                    <li><a href="https://x.com/Maestropuns" class="text-2xl hover:text-primary transition"><i class="bi-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-primary transition"><i class="bi-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // JavaScript to switch images in the carousel every 2 seconds
+        // Mobile menu toggle (same as homepage)
+        const menuIcon = document.getElementById('menu');
+        const navbarList = document.getElementById('navbar-list');
+
+        menuIcon.addEventListener('click', () => {
+            navbarList.classList.toggle('hidden');
+            navbarList.classList.toggle('flex');
+            navbarList.classList.toggle('flex-col');
+            navbarList.classList.toggle('absolute');
+            navbarList.classList.toggle('bg-secondary');
+            navbarList.classList.toggle('w-full');
+            navbarList.classList.toggle('z-50');
+        });
+
+        // Image carousel
+        const images = document.querySelectorAll('.relative img');
         let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-image');
+        
         setInterval(() => {
-            images[currentIndex].style.display = 'none';
+            images[currentIndex].classList.remove('opacity-100');
+            images[currentIndex].classList.add('opacity-0');
+            
             currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].style.display = 'block';
-        }, 2000);
+            
+            images[currentIndex].classList.remove('opacity-0');
+            images[currentIndex].classList.add('opacity-100');
+        }, 5000);
     </script>
 </body>
 </html>
