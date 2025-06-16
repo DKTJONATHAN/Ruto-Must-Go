@@ -1,79 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The ICC Case Against Ruto and the Ocampo Six</title>
+    <title>The ICC Case Against Ruto and the Ocampo Six | Ruto Must Go</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
         }
-
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
         }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
         }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Image Carousel Styles */
         .carousel-container {
             position: relative;
             max-width: 100%;
@@ -81,94 +36,181 @@
             border-radius: 10px;
             overflow: hidden;
         }
-
         .carousel-images {
             display: flex;
             transition: transform 1s ease-in-out;
         }
-
         .carousel-images img {
             max-width: 100%;
             border-radius: 10px;
             display: block;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
-<body>
-    <header>
-        <h1>The ICC Case Against Ruto and the Ocampo Six</h1>
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <header class="bg-red-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-bold font-montserrat">RutoMustGo</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+                <a href="politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="abductions.html" class="hover:text-gray-200 transition">Abductions</a>
+                <a href="murders.html" class="hover:text-gray-200 transition">Murders</a>
+                <a href="adani.html" class="hover:text-gray-200 transition">Adani Scandal</a>
+                <a href="rejectfinancebill2024.html" class="hover:text-gray-200 transition">Finance Bill</a>
+                <a href="genzprotests.html" class="hover:text-gray-200 transition">GenZ Protests</a>
+                <a href="society.html" class="hover:text-gray-200 transition">Society</a>
+                <a href="health.html" class="hover:text-gray-200 transition">Health</a>
+                <a href="fufuaicc.html" class="hover:text-gray-200 transition">Fufu AI CC</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="md:hidden hamburger focus:outline-none" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-red-800" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
+                <a href="politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
+                <a href="murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="adani.html" class="py-2 hover:bg-red-700 px-2 rounded">Adani Scandal</a>
+                <a href="rejectfinancebill2024.html" class="py-2 hover:bg-red-700 px-2 rounded">Finance Bill</a>
+                <a href="genzprotests.html" class="py-2 hover:bg-red-700 px-2 rounded">GenZ Protests</a>
+                <a href="society.html" class="py-2 hover:bg-red-700 px-2 rounded">Society</a>
+                <a href="health.html" class="py-2 hover:bg-red-700 px-2 rounded">Health</a>
+                <a href="fufuaicc.html" class="py-2 hover:bg-red-700 px-2 rounded">Fufu AI CC</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <div class="container">
-            <article>
-                <!-- Image Carousel with automatic switching of images every 2 seconds -->
-                <div class="carousel-container">
-                    <div class="carousel-images">
-                        <img src="../Assets/2007.jpg" alt="Image 1">
-                        <img src="../Assets/20072.jpg" alt="Image 2">
-                    </div>
+    <main class="py-8">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Article Header -->
+            <div class="mb-8">
+                <span class="text-red-600 font-bold">JUSTICE</span>
+                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-montserrat">The ICC Case Against Ruto and the Ocampo Six</h1>
+                <div class="flex items-center space-x-4 text-gray-600">
+                    <span>By RutoMustGo Team</span>
+                    <span>•</span>
+                    <span>June 16, 2025</span>
                 </div>
+            </div>
 
-                <p>
-                    The International Criminal Court (ICC) case against William Ruto and his so-called Ocampo Six accomplices has been a landmark in Kenyan political history, stemming from the 2007-2008 post-election violence. The case accused Ruto, along with Uhuru Kenyatta, Francis Muthaura, Henry Kosgey, Joshua Arap Sang, and Mohammed Hussein Ali, of orchestrating crimes against humanity.
-                </p>
-                <p>
-                    Ruto, then a key figure in the opposition party, was charged with murder, forcible transfer of population, and persecution. The violence that followed the disputed election left over 1,000 dead and displaced hundreds of thousands, with ethnic clashes marking one of Kenya's darkest periods. Yet, the ICC case against Ruto was dismissed in 2016 due to witness interference and insufficient evidence, a decision met with both relief and outrage.
-                </p>
-                <p>
-                    Recent years have seen the hashtag #FufuaICC trending, with many Kenyans and online activists advocating for the ICC to revisit the case. The call for justice is fueled by ongoing reports of human rights abuses, abductions, and the government's perceived failure to hold accountable those involved in historical injustices. The demand for reopening the case is not just about revisiting past crimes but also about setting a precedent for current and future governance.
-                </p>
-                <p>
-                    Social media accounts have highlighted various reasons for reopening the case, including:
-                    - The need for closure for victims and their families, who have seen little justice for the atrocities of 2007-2008.
-                    - Concerns over witness intimidation during the original trial, suggesting that a fair trial was never possible under the circumstances.
-                    - New evidence or testimonies that might have come to light since the case's closure, which could alter the previous outcomes.
-                </p>
-                <p>
-                    There's also a push for the ICC to investigate newer allegations of human rights abuses under Ruto's administration, suggesting that the patterns of violence and suppression might be linked to the same individuals who were once suspects. The argument is that without accountability, the cycle of impunity continues.
-                </p>
-                <p>
-                    Critics of the movement to reopen the case argue that it's time to move forward, that justice has been served through national mechanisms, or that the ICC has shown biases in its prosecutions. However, supporters of #FufuaICC maintain that true reconciliation and prevention of future violence require addressing past crimes comprehensively.
-                </p>
-                <p>
-                    The discourse around this case has also brought to light the broader issues of political accountability, the role of international justice, and the impact of ethnic politics in Kenya. While Ruto's political career has continued to flourish, the shadow of the ICC case lingers, with many believing that reopening it could signify a real commitment to justice and healing for Kenya.
-                </p>
-                <p>
-                    In conclusion, the #FufuaICC movement reflects deep-seated desires for justice, accountability, and reconciliation in Kenyan society. It underscores the unfinished narrative of the 2007-2008 violence, questioning whether true peace can be achieved without addressing the root causes of such conflicts through the lens of international law.
-                </p>
-            </article>
-        </div>
+            <!-- Image Carousel -->
+            <div class="carousel-container mb-8">
+                <div class="carousel-images">
+                    <img src="Assets/2007.jpg" alt="2007-2008 post-election violence">
+                    <img src="Assets/20072.jpg" alt="ICC proceedings against Kenyan officials">
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content bg-white p-6 md:p-8 rounded-lg shadow-sm">
+                <p class="lead">The ICC case against William Ruto and the Ocampo Six remains a pivotal moment in Kenya's pursuit of justice for the 2007-2008 post-election violence, with renewed calls to reopen the case under #FufuaICC.</p>
+                
+                <p>The International Criminal Court (ICC) case against William Ruto and his so-called Ocampo Six accomplices has been a landmark in Kenyan political history, stemming from the 2007-2008 post-election violence. The case accused Ruto, along with Uhuru Kenyatta, Francis Muthaura, Henry Kosgey, Joshua Arap Sang, and Mohammed Hussein Ali, of orchestrating crimes against humanity.</p>
+                
+                <p>Ruto, then a key figure in the opposition party, was charged with murder, forcible transfer of population, and persecution. The violence that followed the disputed election left over 1,000 dead and displaced hundreds of thousands, with ethnic clashes marking one of Kenya's darkest periods. Yet, the ICC case against Ruto was dismissed in 2016 due to witness interference and insufficient evidence, a decision met with both relief and outrage.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">The #FufuaICC Movement</h2>
+                
+                <p>Recent years have seen the hashtag #FufuaICC trending, with many Kenyans and online activists advocating for the ICC to revisit the case. The call for justice is fueled by ongoing reports of human rights abuses, abductions, and the government's perceived failure to hold accountable those involved in historical injustices. The demand for reopening the case is not just about revisiting past crimes but also about setting a precedent for current and future governance.</p>
+                
+                <!-- Image with caption -->
+                <figure class="my-8">
+                    <img src="Assets/icc-protest.jpg" alt="Protesters demanding ICC justice" class="w-full rounded-lg">
+                    <figcaption class="text-center text-sm text-gray-600 mt-2">Activists demonstrating for the reopening of ICC cases against Kenyan officials</figcaption>
+                </figure>
+                
+                <p>Social media accounts have highlighted various reasons for reopening the case, including:</p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li class="mb-2">The need for closure for victims and their families, who have seen little justice for the atrocities of 2007-2008.</li>
+                    <li class="mb-2">Concerns over witness intimidation during the original trial, suggesting that a fair trial was never possible under the circumstances.</li>
+                    <li class="mb-2">New evidence or testimonies that might have come to light since the case's closure, which could alter the previous outcomes.</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Current Implications</h2>
+                
+                <p>There's also a push for the ICC to investigate newer allegations of human rights abuses under Ruto's administration, suggesting that the patterns of violence and suppression might be linked to the same individuals who were once suspects. The argument is that without accountability, the cycle of impunity continues.</p>
+                
+                <p>Critics of the movement to reopen the case argue that it's time to move forward, that justice has been served through national mechanisms, or that the ICC has shown biases in its prosecutions. However, supporters of #FufuaICC maintain that true reconciliation and prevention of future violence require addressing past crimes comprehensively.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Broader Political Context</h2>
+                
+                <p>The discourse around this case has also brought to light the broader issues of political accountability, the role of international justice, and the impact of ethnic politics in Kenya. While Ruto's political career has continued to flourish, the shadow of the ICC case lingers, with many believing that reopening it could signify a real commitment to justice and healing for Kenya.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Conclusion</h2>
+                
+                <p>In conclusion, the #FufuaICC movement reflects deep-seated desires for justice, accountability, and reconciliation in Kenyan society. It underscores the unfinished narrative of the 2007-2008 violence, questioning whether true peace can be achieved without addressing the root causes of such conflicts through the lens of international law.</p>
+            </div>
+        </article>
     </main>
 
-    <footer>
-        <p>© 2025 Ruto Must Go</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
+                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
+                        <li><a href="abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
+                        <li><a href="murders.html" class="hover:text-red-400 transition">Murders</a></li>
+                        <li><a href="genzprotests.html" class="hover:text-red-400 transition">GenZ Protests</a></li>
+                        <li><a href="rejectfinancebill2024.html" class="hover:text-red-400 transition">Finance Bill</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 RutoMustGo. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // JavaScript for Auto-Switching Image Carousel
         let slideIndex = 0;
 
