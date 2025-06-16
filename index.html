@@ -3,177 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruto Must Go</title>
-    <link rel="icon" href="./public/external/icc.jpg">
-    <!-- Add these to your head -->
+    <title>Ruto Must Go - Kenyan Accountability Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom hamburger menu animation */
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
 </head>
-<body class="font-sans bg-light text-dark">
-    <div class="flex flex-col min-h-screen">
-        <!-- Navbar -->
-        <header>
-            <!-- Top Nav -->
-            <div class="bg-primary text-light p-4 flex items-center">
-                <span class="material-symbols-outlined menu hidden md:block mr-4" id="menu">menu</span>
-                <h2 class="text-xl font-heading">Ruto Must Go</h2>
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <header class="bg-red-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-bold font-montserrat">RutoMustGo</a>
             </div>
             
-            <!-- Main Nav -->
-            <nav class="bg-secondary">
-                <ul class="flex justify-center" id="navbar-list">
-                    <li class="p-4"><a href="/" class="text-light hover:text-primary transition">Home</a></li>
-                    <li class="p-4"><a href="Blogs/politics.html" class="text-light hover:text-primary transition">Politics</a></li>
-                    <li class="p-4"><a href="Blogs/corruption.html" class="text-light hover:text-primary transition">Corruption</a></li>
-                    <li class="p-4"><a href="Blogs/murders.html" class="text-light hover:text-primary transition">Murders</a></li>
-                    <li class="p-4"><a href="Blogs/abductions.html" class="text-light hover:text-primary transition">Abductions</a></li>
-                </ul>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+                <a href="politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="abductions.html" class="hover:text-gray-200 transition">Abductions</a>
+                <a href="adani.html" class="hover:text-gray-200 transition">Adani Scandal</a>
             </nav>
             
-            <!-- Utility Nav -->
-            <div class="bg-secondary text-light p-4 flex justify-end">
-                <span class="material-symbols-outlined mx-4 cursor-pointer hover:text-primary transition">search</span>
-                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition">account_circle</span>
+            <!-- Mobile Hamburger Menu -->
+            <button class="md:hidden hamburger focus:outline-none" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-red-800" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
+                <a href="politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
+                <a href="adani.html" class="py-2 hover:bg-red-700 px-2 rounded">Adani Scandal</a>
             </div>
-        </header>
+        </div>
+    </header>
 
+    <main>
         <!-- Hero Section -->
         <section class="relative h-96 overflow-hidden">
-            <img src="./Assets/kasongo.webp" alt="Header Image" class="w-full h-full object-cover brightness-75">
-            <div class="absolute inset-0 flex items-center justify-center text-center text-light">
-                <div class="bg-white/20 backdrop-blur-md p-8 rounded-lg border border-white/20 max-w-3xl mx-4">
-                    <h1 class="text-4xl md:text-5xl font-heading mb-4">Ruto Must Go</h1>
-                    <p class="text-xl mb-8">If Kenya must change, Ruto must go first</p>
-                    <a href="#" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition">Latest Updates</a>
+            <img src="Assets/kasongo.webp" alt="Kenyan Protest" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <div class="text-center px-4">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 font-montserrat">Ruto Must Go</h1>
+                    <p class="text-xl text-white mb-6 max-w-2xl mx-auto">Documenting the failures and abuses of power during William Ruto's presidency</p>
+                    <a href="#recent" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">Explore Reports</a>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Stories -->
-        <section class="py-12 bg-light">
+        <!-- Featured Articles -->
+        <section id="recent" class="py-12 bg-white">
             <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-heading text-secondary text-center mb-12">Featured Stories</h1>
+                <h2 class="text-3xl font-bold text-center mb-12 font-montserrat">Recent Exposés</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Story 1 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
-                            <img src="./Assets/tq_blzp55lz-d-z3i-200h.png" alt="" class="w-full h-full object-cover hover:scale-105 transition">
-                        </div>
+                    <!-- Article 1 -->
+                    <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="Assets/tq_blzp55lz-d-z3i-200h.png" alt="Political Protest" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h5 class="text-primary uppercase text-sm font-bold tracking-wider mb-2">Politics</h5>
-                            <h3 class="text-xl font-heading text-secondary mb-3">The State of Democracy</h3>
-                            <p class="text-gray-700 mb-4">An in-depth analysis of Kenya's democratic journey and current challenges</p>
-                            <a href="./Blogs/politics.html" class="text-accent font-bold hover:text-primary transition">Read More</a>
+                            <span class="text-red-600 text-sm font-bold">POLITICS</span>
+                            <h3 class="text-xl font-bold my-2">The State of Democracy in Kenya</h3>
+                            <p class="text-gray-600 mb-4">Examining the erosion of democratic institutions under Ruto's leadership</p>
+                            <a href="politics.html" class="text-red-600 font-bold hover:underline">Read Investigation →</a>
                         </div>
-                    </div>
+                    </article>
                     
-                    <!-- Story 2 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
-                            <img src="./Assets/tq_httdwkskzj-oll-400w.png" alt="" class="w-full h-full object-cover hover:scale-105 transition">
-                        </div>
+                    <!-- Article 2 -->
+                    <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="Assets/tq_httdwkskzj-oll-400w.png" alt="Corruption" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h5 class="text-primary uppercase text-sm font-bold tracking-wider mb-2">Economy</h5>
-                            <h3 class="text-xl font-heading text-secondary mb-3">Economic Reforms</h3>
-                            <p class="text-gray-700 mb-4">Understanding the impact of recent economic policies on daily life.</p>
-                            <a href="./Blogs/economy.html" class="text-accent font-bold hover:text-primary transition">Read More</a>
+                            <span class="text-red-600 text-sm font-bold">CORRUPTION</span>
+                            <h3 class="text-xl font-bold my-2">Billions Lost to Graft</h3>
+                            <p class="text-gray-600 mb-4">Tracking the missing funds and corrupt deals of this administration</p>
+                            <a href="corruption.html" class="text-red-600 font-bold hover:underline">Read Investigation →</a>
                         </div>
-                    </div>
+                    </article>
                     
-                    <!-- Story 3 -->
-                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
-                            <img src="./Assets/tq_vumowcotjv-c1ed-400w.png" alt="" class="w-full h-full object-cover hover:scale-105 transition">
-                        </div>
+                    <!-- Article 3 -->
+                    <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="Assets/tq_vumowcotjv-c1ed-400w.png" alt="Abductions" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h5 class="text-primary uppercase text-sm font-bold tracking-wider mb-2">Gen Z Protest</h5>
-                            <h3 class="text-xl font-heading text-secondary mb-3">Youth Movement</h3>
-                            <p class="text-gray-700 mb-4">How young Kenyans are driving social change across the nation.</p>
-                            <a href="./Blogs/genzprotests.html" class="text-accent font-bold hover:text-primary transition">Read More</a>
+                            <span class="text-red-600 text-sm font-bold">ABDUCTIONS</span>
+                            <h3 class="text-xl font-bold my-2">The Disappeared</h3>
+                            <p class="text-gray-600 mb-4">Documenting the cases of activists abducted under mysterious circumstances</p>
+                            <a href="abductions.html" class="text-red-600 font-bold hover:underline">Read Investigation →</a>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Popular Topics -->
-        <section class="py-12 bg-secondary text-light">
-            <div class="container mx-auto px-4">
-                <h1 class="text-3xl font-heading text-center mb-12 uppercase tracking-wider">Popular Topics</h1>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    <a href="Blogs/abductions.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Abductions</a>
-                    <a href="Blogs/economy.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Economy</a>
-                    <a href="Blogs/corruption.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Corruption</a>
-                    <a href="Blogs/fufuaicc.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Fufua ICC</a>
-                    <a href="Blogs/genzprotests.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Gen Z Protests</a>
-                    <a href="Blogs/rejectfinancebill2024.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Reject Finance Bill 2024</a>
-                    <a href="Blogs/education.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Education</a>
-                    <a href="Blogs/health.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Health</a>
-                    <a href="Blogs/adani.html" class="bg-white/10 hover:bg-white/20 h-20 flex items-center justify-center rounded-lg transition text-center p-2">Adani</a>
+        <!-- Call to Action -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6 font-montserrat">Stay Informed</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to receive updates on our latest investigations and reports</p>
+                <div class="max-w-md mx-auto flex">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none">
+                    <button class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-r-lg transition">Subscribe</button>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- Footer -->
-        <footer class="bg-dark text-light py-12">
-            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h2 class="text-xl font-heading text-primary mb-4">Ruto Must Go</h2>
-                    <p class="mb-4">Your trusted source for news and analysis</p>
-                    <p>&copy;<span id="getDate"></span>. All Rights Reserved.</p>
+                    <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
+                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
                 </div>
-                
                 <div>
-                    <h2 class="text-xl font-heading text-primary mb-4">Quick Links</h2>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary transition">About Us</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Advertise</a></li>
+                        <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h2 class="text-xl font-heading text-primary mb-4">Categories</h2>
+                    <h4 class="font-bold mb-4">Categories</h4>
                     <ul class="space-y-2">
-                        <li><a href="Blogs/politics.html" class="hover:text-primary transition">Politics</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Economy</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Society</a></li>
+                        <li><a href="politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
+                        <li><a href="abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
                     </ul>
                 </div>
-                
                 <div>
-                    <h2 class="text-xl font-heading text-primary mb-4">Follow Us</h2>
-                    <ul class="flex space-x-4">
-                        <li><a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-primary transition"><i class="bi-facebook"></i></a></li>
-                        <li><a href="https://x.com/Maestropuns" class="text-2xl hover:text-primary transition"><i class="bi-twitter"></i></a></li>
-                        <li><a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-primary transition"><i class="bi-instagram"></i></a></li>
-                    </ul>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 RutoMustGo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Toggle menu visibility on mobile
-        const menuIcon = document.getElementById('menu');
-        const navbarList = document.getElementById('navbar-list');
-
-        menuIcon.addEventListener('click', () => {
-            navbarList.classList.toggle('hidden');
-            navbarList.classList.toggle('flex');
-            navbarList.classList.toggle('flex-col');
-            navbarList.classList.toggle('absolute');
-            navbarList.classList.toggle('bg-secondary');
-            navbarList.classList.toggle('w-full');
-            navbarList.classList.toggle('z-50');
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
         });
-
-        // Set current year
-        document.getElementById('getDate').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
