@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruto Must Go - Kenyan Accountability Platform</title>
+    <title>Ruto Must Go</title>
+    <link rel="icon" href="./public/external/icc.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
-        /* Custom hamburger menu animation */
         .hamburger span {
             display: block;
             width: 25px;
@@ -26,6 +28,17 @@
         .hamburger.active span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
         }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./Assets/kasongo.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50 text-gray-900">
@@ -39,10 +52,10 @@
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="hover:text-gray-200 transition">Home</a>
-                <a href="politics.html" class="hover:text-gray-200 transition">Politics</a>
-                <a href="corruption.html" class="hover:text-gray-200 transition">Corruption</a>
-                <a href="abductions.html" class="hover:text-gray-200 transition">Abductions</a>
-                <a href="adani.html" class="hover:text-gray-200 transition">Adani Scandal</a>
+                <a href="Blogs/politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="Blogs/corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="Blogs/murders.html" class="hover:text-gray-200 transition">Murders</a>
+                <a href="Blogs/abductions.html" class="hover:text-gray-200 transition">Abductions</a>
             </nav>
             
             <!-- Mobile Hamburger Menu -->
@@ -57,81 +70,79 @@
         <div class="md:hidden hidden bg-red-800" id="mobile-menu">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
                 <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
-                <a href="politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
-                <a href="corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
-                <a href="abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
-                <a href="adani.html" class="py-2 hover:bg-red-700 px-2 rounded">Adani Scandal</a>
+                <a href="Blogs/politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="Blogs/corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="Blogs/murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="Blogs/abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative h-96 overflow-hidden">
-            <img src="Assets/kasongo.webp" alt="Kenyan Protest" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                <div class="text-center px-4">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 font-montserrat">Ruto Must Go</h1>
-                    <p class="text-xl text-white mb-6 max-w-2xl mx-auto">Documenting the failures and abuses of power during William Ruto's presidency</p>
-                    <a href="#recent" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition">Explore Reports</a>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <div class="hero-image h-96 flex items-center justify-center text-white">
+        <div class="glassmorphism p-8 text-center max-w-2xl mx-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-montserrat">Ruto Must Go</h1>
+            <p class="text-xl mb-6">If Kenya must change, Ruto must go first</p>
+            <a href="#" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md font-medium transition">Latest Updates</a>
+        </div>
+    </div>
 
-        <!-- Featured Articles -->
-        <section id="recent" class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 font-montserrat">Recent Exposés</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Article 1 -->
-                    <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <img src="Assets/tq_blzp55lz-d-z3i-200h.png" alt="Political Protest" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-red-600 text-sm font-bold">POLITICS</span>
-                            <h3 class="text-xl font-bold my-2">The State of Democracy in Kenya</h3>
-                            <p class="text-gray-600 mb-4">Examining the erosion of democratic institutions under Ruto's leadership</p>
-                            <a href="politics.html" class="text-red-600 font-bold hover:underline">Read Investigation →</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Article 2 -->
-                    <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <img src="Assets/tq_httdwkskzj-oll-400w.png" alt="Corruption" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-red-600 text-sm font-bold">CORRUPTION</span>
-                            <h3 class="text-xl font-bold my-2">Billions Lost to Graft</h3>
-                            <p class="text-gray-600 mb-4">Tracking the missing funds and corrupt deals of this administration</p>
-                            <a href="corruption.html" class="text-red-600 font-bold hover:underline">Read Investigation →</a>
-                        </div>
-                    </article>
-                    
-                    <!-- Article 3 -->
-                    <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <img src="Assets/tq_vumowcotjv-c1ed-400w.png" alt="Abductions" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-red-600 text-sm font-bold">ABDUCTIONS</span>
-                            <h3 class="text-xl font-bold my-2">The Disappeared</h3>
-                            <p class="text-gray-600 mb-4">Documenting the cases of activists abducted under mysterious circumstances</p>
-                            <a href="abductions.html" class="text-red-600 font-bold hover:underline">Read Investigation →</a>
-                        </div>
-                    </article>
+    <!-- Featured Stories -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold mb-8 text-center font-montserrat">Featured Stories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <img src="./Assets/tq_blzp55lz-d-z3i-200h.png" alt="The State of Democracy" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="text-red-600 font-bold">Politics</span>
+                    <h3 class="text-xl font-bold my-2">The State of Democracy</h3>
+                    <p class="text-gray-600 mb-4">An in-depth analysis of Kenya's democratic journey and current challenges</p>
+                    <a href="./Blogs/politics.html" class="text-red-600 font-medium hover:underline">Read More</a>
                 </div>
             </div>
-        </section>
+            
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <img src="./Assets/tq_httdwkskzj-oll-400w.png" alt="Economic Reforms" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="text-red-600 font-bold">Economy</span>
+                    <h3 class="text-xl font-bold my-2">Economic Reforms</h3>
+                    <p class="text-gray-600 mb-4">Understanding the impact of recent economic policies on daily life.</p>
+                    <a href="./Blogs/economy.html" class="text-red-600 font-medium hover:underline">Read More</a>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                <img src="./Assets/tq_vumowcotjv-c1ed-400w.png" alt="Youth Movement" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="text-red-600 font-bold">Gen Z Protest</span>
+                    <h3 class="text-xl font-bold my-2">Youth Movement</h3>
+                    <p class="text-gray-600 mb-4">How young Kenyans are driving social change across the nation.</p>
+                    <a href="./Blogs/genzprotests.html" class="text-red-600 font-medium hover:underline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Call to Action -->
-        <section class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-6 font-montserrat">Stay Informed</h2>
-                <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to receive updates on our latest investigations and reports</p>
-                <div class="max-w-md mx-auto flex">
-                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none">
-                    <button class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-r-lg transition">Subscribe</button>
-                </div>
+    <!-- Popular Topics -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center font-montserrat">Popular Topics</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <a href="Blogs/abductions.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Abductions</a>
+                <a href="Blogs/economy.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Economy</a>
+                <a href="Blogs/corruption.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Corruption</a>
+                <a href="Blogs/fufuaicc.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Fufua ICC</a>
+                <a href="Blogs/genzprotests.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Gen Z Protests</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Reject Finance Bill 2024</a>
+                <a href="Blogs/education.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Education</a>
+                <a href="Blogs/health.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Health</a>
+                <a href="Blogs/adani.html" class="bg-white hover:bg-red-600 hover:text-white text-center py-4 px-2 rounded-md shadow-sm transition font-medium">Adani</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -139,35 +150,33 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
-                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                    <p>Your trusted source for news and analysis</p>
+                    <p class="mt-4">&copy;<span id="getDate"></span>. All Rights Reserved.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">Advertise</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Categories</h4>
                     <ul class="space-y-2">
-                        <li><a href="politics.html" class="hover:text-red-400 transition">Politics</a></li>
-                        <li><a href="corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
-                        <li><a href="abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
+                        <li><a href="Blogs/politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="Blogs/economy.html" class="hover:text-red-400 transition">Economy</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">Society</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4">Follow Us</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
-                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
-                        <a href="#" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p>&copy; 2025 RutoMustGo. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -181,6 +190,9 @@
             menuBtn.classList.toggle('active');
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Set current year in footer
+        document.getElementById('getDate').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
