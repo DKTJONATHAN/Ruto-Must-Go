@@ -1,153 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murders Linked to William Ruto</title>
+    <title>Murders Linked to William Ruto | Ruto Must Go</title>
+    <link rel="icon" href="./public/external/icc.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
         }
-
-        body {
-            background-color: #001000; /* Kenyan Flag: Green */
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #000;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
         }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(to right, #fff, #e6e6e6);
-            color: #001000;
-            text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
         }
-
-        h1 {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
-
-        /* Main Content Styles */
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        article {
-            background: rgba(255, 255, 255, 0.9);
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-
-        p {
-            color: #000;
-            font-size: 18px;
-            margin-bottom: 20px;
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
         }
-
-        /* Image Styles */
-        img {
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            min-width: 100%;
+        }
+        .carousel-item img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            display: block;
         }
-
-        /* Footer Styles */
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-            
-            article {
-                padding: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
+        .carousel-control.prev {
+            left: 10px;
+        }
+        .carousel-control.next {
+            right: 10px;
+        }
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 10;
+        }
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .carousel-indicator.active {
+            background: white;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Murders Linked to William Ruto</h1>
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <header class="bg-red-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-xl font-bold font-montserrat">RutoMustGo</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-gray-200 transition">Home</a>
+                <a href="Blogs/politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="Blogs/corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="Blogs/abductions.html" class="hover:text-gray-200 transition">Abductions</a>
+                <a href="Blogs/murders.html" class="hover:text-gray-200 transition">Murders</a>
+                <a href="Blogs/adani.html" class="hover:text-gray-200 transition">Adani Scandal</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="hover:text-gray-200 transition">Finance Bill</a>
+                <a href="Blogs/genzprotests.html" class="hover:text-gray-200 transition">GenZ Protests</a>
+                <a href="Blogs/society.html" class="hover:text-gray-200 transition">Society</a>
+                <a href="Blogs/health.html" class="hover:text-gray-200 transition">Health</a>
+                <a href="Blogs/fufuaicc.html" class="hover:text-gray-200 transition">Fufu AI CC</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="md:hidden hamburger focus:outline-none" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-red-800" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
+                <a href="Blogs/politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="Blogs/corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="Blogs/abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
+                <a href="Blogs/murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="Blogs/adani.html" class="py-2 hover:bg-red-700 px-2 rounded">Adani Scandal</a>
+                <a href="Blogs/rejectfinancebill2024.html" class="py-2 hover:bg-red-700 px-2 rounded">Finance Bill</a>
+                <a href="Blogs/genzprotests.html" class="py-2 hover:bg-red-700 px-2 rounded">GenZ Protests</a>
+                <a href="Blogs/society.html" class="py-2 hover:bg-red-700 px-2 rounded">Society</a>
+                <a href="Blogs/health.html" class="py-2 hover:bg-red-700 px-2 rounded">Health</a>
+                <a href="Blogs/fufuaicc.html" class="py-2 hover:bg-red-700 px-2 rounded">Fufu AI CC</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <div class="container">
-            <article>
-                <img src="images/2007-2008-violence.jpg" alt="2007-2008 Post-Election Violence" />
-                <p>
-                    William Ruto's name has surfaced in connection with several high-profile murders in Kenya. One of the earliest cases was during the 2007-2008 post-election violence, where Ruto was accused by the International Criminal Court (ICC) of orchestrating attacks that led to numerous deaths, including the Kiambaa church fire where dozens perished. Although the ICC case against him was eventually dropped due to witness tampering and insufficient evidence, the allegations left a significant mark on his political career.
+    <main class="py-8">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Article Header -->
+            <div class="mb-8">
+                <span class="text-red-600 font-bold">MURDERS</span>
+                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-montserrat">Murders Linked to William Ruto</h1>
+                <div class="flex items-center space-x-4 text-gray-600">
+                    <span>By RutoMustGo Team</span>
+                    <span>•</span>
+                    <span>January 19, 2025</span>
+                </div>
+            </div>
+
+            <!-- Featured Image Carousel -->
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="../Assets/2007-2008-violence.jpg" alt="2007-2008 Post-Election Violence">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Assets/juma.webp" alt="Jacob Juma Murder">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Assets/MESHACK-YEBEI.jpg" alt="Meshack Yebei Murder">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Assets/ian.jpg" alt="Ian Singoei Death">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Assets/keino.jpg" alt="Mercy Keino Murder">
+                    </div>
+                </div>
+                <button class="carousel-control prev" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-control next" onclick="moveSlide(1)">❯</button>
+                <div class="carousel-indicators">
+                    <span class="carousel-indicator active" onclick="goToSlide(0)"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(1)"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(2)"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(3)"></span>
+                    <span class="carousel-indicator" onclick="goToSlide(4)"></span>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content bg-white p-6 md:p-8 rounded-lg shadow-sm">
+                <p class="font-medium text-lg">
+                    William Ruto's name has surfaced in connection with several high-profile murders in Kenya, raising serious questions about accountability and justice in the country.
                 </p>
-                <img src="../Assets/juma.webp" alt="Jacob Juma Murder" />
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">2007-2008 Post-Election Violence</h2>
+                <img src="../Assets/2007-2008-violence.jpg" alt="2007-2008 Post-Election Violence" class="my-4 rounded-lg">
+                <p>
+                    One of the earliest cases was during the 2007-2008 post-election violence, where Ruto was accused by the International Criminal Court (ICC) of orchestrating attacks that led to numerous deaths, including the Kiambaa church fire where dozens perished. Although the ICC case against him was eventually dropped due to witness tampering and insufficient evidence, the allegations left a significant mark on his political career.
+                </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Jacob Juma Assassination</h2>
+                <img src="../Assets/juma.webp" alt="Jacob Juma Murder" class="my-4 rounded-lg">
                 <p>
                     Another notable case is the murder of Jacob Juma, a businessman and government critic, in 2016. Juma had been vocal against Ruto on social media, accusing him of corruption. His assassination led to speculation and claims by some that Ruto had a motive for wanting Juma silenced, although direct evidence linking Ruto to the murder was never conclusively established.
                 </p>
-                <img src="../Assets/MESHACK-YEBEI.jpg" alt="Meshack Yebei Murder" />
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Meshack Yebei's Mysterious Death</h2>
+                <img src="../Assets/MESHACK-YEBEI.jpg" alt="Meshack Yebei Murder" class="my-4 rounded-lg">
                 <p>
                     The death of Meshack Yebei, a former bodyguard of Ruto, in 2015, also drew attention. Yebei was allegedly a key witness in the ICC case against Ruto. His body was found in Uganda, and it was suggested by some reports that his death might have been linked to preventing him from testifying against Ruto, though no direct link was officially confirmed.
                 </p>
-                <img src="../Assets/ian.jpg" alt="Ian Singoei Death" />
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Activist Ian Singoei</h2>
+                <img src="../Assets/ian.jpg" alt="Ian Singoei Death" class="my-4 rounded-lg">
                 <p>
                     More recently, there have been allegations of Ruto's involvement in the deaths of activists and critics. In 2023, the suspicious death of activist Ian Singoei was linked by some to government suppression of dissent, with claims that those close to Ruto might have played a role, though these remain unproven assertions without legal substantiation.
                 </p>
-                <img src="../Assets/keino.jpg" alt="Mercy Keino Murder" />
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Mercy Keino Case</h2>
+                <img src="../Assets/keino.jpg" alt="Mercy Keino Murder" class="my-4 rounded-lg">
                 <p>
                     The murder of Mercy Keino, a university student, was also mentioned in discussions around political abductions and killings. Although the government denied any involvement, some reports suggested that she was targeted due to her association with movements critical of Ruto's administration.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Pattern of Violence</h2>
                 <p>
                     The hashtag #RutoMustGo has been used by detractors to highlight these cases, arguing that such incidents indicate a pattern of violence or negligence towards human life by those in power or close to Ruto. However, these allegations are often met with official denials, with the government asserting that investigations into these murders have not conclusively linked Ruto to any criminal acts.
                 </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Calls for Accountability</h2>
                 <p>
                     Despite the absence of legal convictions directly implicating Ruto, the repeated association with these grim events has fueled public discourse on accountability and the need for transparent investigations into any potential wrongdoing. The shadow of these murder cases continues to loom over Ruto's political legacy, prompting ongoing calls for justice and scrutiny from civil society and human rights bodies.
                 </p>
-                <p>
+                
+                <p class="font-medium mt-8">
                     In conclusion, while no definitive evidence has been presented in court to directly connect William Ruto to these murders, the persistent mention of his name in connection with violent deaths has contributed to a narrative of suspicion and demand for a clearer examination of the circumstances surrounding each case.
                 </p>
-            </article>
-        </div>
+            </div>
+        </article>
     </main>
 
-    <footer>
-        <p>© 2025 Ruto Must Go</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
+                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                    <p class="mt-4">&copy;<span id="getDate"></span>. All Rights Reserved.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Blogs/politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="Blogs/corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
+                        <li><a href="Blogs/abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
+                        <li><a href="Blogs/murders.html" class="hover:text-red-400 transition">Murders</a></li>
+                        <li><a href="Blogs/genzprotests.html" class="hover:text-red-400 transition">GenZ Protests</a></li>
+                        <li><a href="Blogs/rejectfinancebill2024.html" class="hover:text-red-400 transition">Finance Bill</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('getDate').textContent = new Date().getFullYear();
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveSlide(n) {
+            currentSlide = (currentSlide + n + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            updateCarousel();
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(() => moveSlide(1), 5000);
+    </script>
 </body>
 </html>
