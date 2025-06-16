@@ -3,51 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abductions Under William Ruto's Presidency</title>
-    <!-- Same head as homepage for consistency -->
+    <title>Abductions Under William Ruto's Presidency | Ruto Must Go</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-primary {
+            background-color: #991b1b; /* red-800 */
+        }
+        .bg-secondary {
+            background-color: #7f1d1d; /* red-900 */
+        }
+        .bg-dark {
+            background-color: #111827; /* gray-900 */
+        }
+        .bg-light {
+            background-color: #f9fafb; /* gray-50 */
+        }
+        .text-light {
+            color: #f9fafb; /* gray-50 */
+        }
+        .text-dark {
+            color: #111827; /* gray-900 */
+        }
+        .text-primary {
+            color: #991b1b; /* red-800 */
+        }
+        .text-secondary {
+            color: #7f1d1d; /* red-900 */
+        }
+    </style>
 </head>
 <body class="font-sans bg-light text-dark">
-    <!-- Same header as homepage -->
-    <header>
-        <div class="bg-primary text-light p-4 flex items-center">
-            <span class="material-symbols-outlined menu hidden md:block mr-4" id="menu">menu</span>
-            <h2 class="text-xl font-heading">Ruto Must Go</h2>
+    <!-- Navigation -->
+    <header class="bg-primary text-light shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="material-symbols-outlined menu hidden md:block mr-2">menu</span>
+                <a href="index.html" class="text-xl font-bold font-heading">RutoMustGo</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6" id="desktop-nav">
+                <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+                <a href="politics.html" class="hover:text-gray-300 transition">Politics</a>
+                <a href="corruption.html" class="hover:text-gray-300 transition">Corruption</a>
+                <a href="murders.html" class="hover:text-gray-300 transition">Murders</a>
+                <a href="abductions.html" class="hover:text-gray-300 transition font-bold">Abductions</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="md:hidden hamburger focus:outline-none" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
         
-        <nav class="bg-secondary">
-            <ul class="flex justify-center" id="navbar-list">
-                <li class="p-4"><a href="/" class="text-light hover:text-primary transition">Home</a></li>
-                <li class="p-4"><a href="politics.html" class="text-light hover:text-primary transition">Politics</a></li>
-                <li class="p-4"><a href="corruption.html" class="text-light hover:text-primary transition">Corruption</a></li>
-                <li class="p-4"><a href="murders.html" class="text-light hover:text-primary transition">Murders</a></li>
-                <li class="p-4"><a href="abductions.html" class="text-light hover:text-primary transition font-bold">Abductions</a></li>
-            </ul>
-        </nav>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-secondary" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
+                <a href="politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="abductions.html" class="py-2 hover:bg-red-700 px-2 rounded font-bold">Abductions</a>
+            </div>
+        </div>
     </header>
 
     <main class="py-8">
         <div class="container mx-auto px-4 max-w-4xl">
             <!-- Article Header -->
             <div class="mb-8 text-center">
-                <h1 class="text-3xl md:text-4xl font-heading text-secondary mb-4">Abductions Under William Ruto's Presidency</h1>
-                <div class="flex justify-center space-x-4 text-sm text-gray-500">
-                    <span>Author: Anonymous</span>
-                    <span>Date: January 19, 2025</span>
+                <span class="text-primary font-bold">ABDUCTIONS</span>
+                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-heading">Abductions Under William Ruto's Presidency</h1>
+                <div class="flex justify-center space-x-4 text-gray-600">
+                    <span>By Anonymous</span>
+                    <span>•</span>
+                    <span>January 19, 2025</span>
                 </div>
             </div>
 
             <!-- Image Carousel -->
             <div class="relative h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
-                <img src="../Assets/abdction1.jpg" alt="Abduction Scene" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100">
-                <img src="../Assets/abductions2.webp" alt="Protests Against Ruto" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                <img src="Assets/abdction1.jpg" alt="Abduction Scene" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+                <img src="Assets/abductions2.webp" alt="Protests Against Ruto" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0">
             </div>
 
             <!-- Article Content -->
-            <article class="prose prose-lg max-w-none">
+            <div class="article-content bg-white p-6 md:p-8 rounded-lg shadow-sm">
                 <p class="mb-4">
                     Since William Ruto became the President of Kenya, there has been a marked increase in abductions, mostly targeting individuals who are critical of the government, activists, and those involved in political dissent. This issue has drawn considerable attention from human rights organizations, local citizens, and international observers, with numerous reports detailing the alarming trend.
                 </p>
@@ -75,76 +145,80 @@
                 <p class="mb-4">
                     In conclusion, while the government insists on its commitment to human rights, the reality on the ground suggests a different narrative. The public's demand for accountability, transparency, and justice continues to grow, highlighting the urgent need for action to prevent further erosion of democratic values in Kenya.
                 </p>
-            </article>
+            </div>
         </div>
     </main>
 
-    <!-- Same footer as homepage -->
+    <!-- Footer -->
     <footer class="bg-dark text-light py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <h2 class="text-xl font-heading text-primary mb-4">Ruto Must Go</h2>
-                <p class="mb-4">Your trusted source for news and analysis</p>
-                <p>&copy; 2025. All Rights Reserved.</p>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-heading">RutoMustGo</h3>
+                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="politics.html" class="hover:text-primary transition">Politics</a></li>
+                        <li><a href="corruption.html" class="hover:text-primary transition">Corruption</a></li>
+                        <li><a href="abductions.html" class="hover:text-primary transition">Abductions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-primary transition"><i class="bi-facebook"></i></a>
+                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-primary transition"><i class="bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-primary transition"><i class="bi-instagram"></i></a>
+                    </div>
+                </div>
             </div>
-            
-            <div>
-                <h2 class="text-xl font-heading text-primary mb-4">Quick Links</h2>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-primary transition">About Us</a></li>
-                    <li><a href="#" class="hover:text-primary transition">Contact</a></li>
-                    <li><a href="#" class="hover:text-primary transition">Advertise</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h2 class="text-xl font-heading text-primary mb-4">Categories</h2>
-                <ul class="space-y-2">
-                    <li><a href="politics.html" class="hover:text-primary transition">Politics</a></li>
-                    <li><a href="#" class="hover:text-primary transition">Economy</a></li>
-                    <li><a href="#" class="hover:text-primary transition">Society</a></li>
-                </ul>
-            </div>
-            
-            <div>
-                <h2 class="text-xl font-heading text-primary mb-4">Follow Us</h2>
-                <ul class="flex space-x-4">
-                    <li><a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-primary transition"><i class="bi-facebook"></i></a></li>
-                    <li><a href="https://x.com/Maestropuns" class="text-2xl hover:text-primary transition"><i class="bi-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-primary transition"><i class="bi-instagram"></i></a></li>
-                </ul>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 RutoMustGo. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle (same as homepage)
-        const menuIcon = document.getElementById('menu');
-        const navbarList = document.getElementById('navbar-list');
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const desktopNav = document.getElementById('desktop-nav');
+        const materialMenu = document.querySelector('.material-symbols-outlined.menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        menuIcon.addEventListener('click', () => {
-            navbarList.classList.toggle('hidden');
-            navbarList.classList.toggle('flex');
-            navbarList.classList.toggle('flex-col');
-            navbarList.classList.toggle('absolute');
-            navbarList.classList.toggle('bg-secondary');
-            navbarList.classList.toggle('w-full');
-            navbarList.classList.toggle('z-50');
+        materialMenu?.addEventListener('click', () => {
+            desktopNav.classList.toggle('hidden');
         });
 
         // Image carousel
         const images = document.querySelectorAll('.relative img');
-        let currentIndex = 0;
-        
-        setInterval(() => {
-            images[currentIndex].classList.remove('opacity-100');
-            images[currentIndex].classList.add('opacity-0');
-            
-            currentIndex = (currentIndex + 1) % images.length;
-            
-            images[currentIndex].classList.remove('opacity-0');
-            images[currentIndex].classList.add('opacity-100');
-        }, 5000);
+        if (images.length > 0) {
+            let currentIndex = 0;
+
+            setInterval(() => {
+                images[currentIndex].classList.remove('opacity-100');
+                images[currentIndex].classList.add('opacity-0');
+
+                currentIndex = (currentIndex + 1) % images.length;
+
+                images[currentIndex].classList.remove('opacity-0');
+                images[currentIndex].classList.add('opacity-100');
+            }, 5000);
+        }
     </script>
 </body>
 </html>
