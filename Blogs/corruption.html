@@ -1,104 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corruption Cases Linked to William Ruto Since 1992</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
+    <title>Corruption Cases Linked to William Ruto Since 1992 | Ruto Must Go</title>
+    <link rel="icon" href="../public/external/icc.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
-        /* Add your styles here (or in your linked CSS) */
-
-        /* Image Carousel Styles */
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
         .carousel-container {
             position: relative;
             max-width: 100%;
-            margin-bottom: 30px;
-            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
             overflow: hidden;
         }
-
         .carousel-images {
             display: flex;
             transition: transform 1s ease-in-out;
         }
-
         .carousel-images img {
-            max-width: 100%;
-            border-radius: 10px;
+            width: 100%;
+            height: auto;
             display: block;
+            object-fit: cover;
+            max-height: 500px;
         }
-
     </style>
 </head>
-<body>
-    <header>
-        <h1>Corruption Cases Linked to William Ruto Since 1992</h1>
+<body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <header class="bg-red-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="../index.html" class="text-xl font-bold font-montserrat">RutoMustGo</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="../index.html" class="hover:text-gray-200 transition">Home</a>
+                <a href="../Blogs/politics.html" class="hover:text-gray-200 transition">Politics</a>
+                <a href="../Blogs/corruption.html" class="hover:text-gray-200 transition">Corruption</a>
+                <a href="../Blogs/murders.html" class="hover:text-gray-200 transition">Murders</a>
+                <a href="../Blogs/abductions.html" class="hover:text-gray-200 transition">Abductions</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="md:hidden hamburger focus:outline-none" id="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-red-800" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="../index.html" class="py-2 hover:bg-red-700 px-2 rounded">Home</a>
+                <a href="../Blogs/politics.html" class="py-2 hover:bg-red-700 px-2 rounded">Politics</a>
+                <a href="../Blogs/corruption.html" class="py-2 hover:bg-red-700 px-2 rounded">Corruption</a>
+                <a href="../Blogs/murders.html" class="py-2 hover:bg-red-700 px-2 rounded">Murders</a>
+                <a href="../Blogs/abductions.html" class="py-2 hover:bg-red-700 px-2 rounded">Abductions</a>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <div class="container">
-            <article>
-                <!-- Image Carousel with automatic switching of images every 2 seconds -->
-                <div class="carousel-container">
-                    <div class="carousel-images">
-                        <img src="../Assets/maandamano1.webp" alt="Image 1">
-                        <img src="../Assets/tq_gkuesghzdx-71l1500h.png" alt="Image 2">
-                    </div>
+    <main class="py-8">
+        <article class="container mx-auto px-4 max-w-4xl">
+            <!-- Article Header -->
+            <div class="mb-8">
+                <span class="text-red-600 font-bold">CORRUPTION</span>
+                <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 font-montserrat">Corruption Cases Linked to William Ruto Since 1992</h1>
+                <div class="flex items-center space-x-4 text-gray-600">
+                    <span>By RutoMustGo Team</span>
+                    <span>•</span>
+                    <span id="current-date"></span>
                 </div>
+            </div>
 
-                <p>
-                    William Ruto's involvement in corruption scandals dates back to his early political career. In the 1990s, as part of the youth wing of the then-dominant KANU party, he was linked to various allegations of financial misconduct. One of the earliest known cases was the Weston Hotel scandal, where Ruto was accused of involvement in the irregular acquisition of land in Nairobi, as reported by The Nation in 1997.
-                </p>
-                <p>
-                    During his tenure as Minister of Agriculture in the early 2000s, Ruto faced allegations related to the maize scandal, where he was accused of facilitating the illegal sale of maize from the national strategic reserves, according to reports from The Standard in 2008.
-                </p>
-                <p>
-                    As Deputy President and in his presidential term, several scandals have been associated with his name. One of the notable ones was the Arror and Kimwarer dams scandal, where billions of shillings were reportedly misappropriated. This was extensively covered by Daily Nation, highlighting the loss of public funds intended for dam construction that never materialized.
-                </p>
-                <p>
-                    Another significant case was the KEMSA (Kenya Medical Supplies Authority) scandal in 2020, where during the COVID-19 response, millions were allegedly siphoned off in a deal for mosquito nets and PPE. This was documented by Citizen TV, with calls for investigations into the procurement process.
-                </p>
-                <p>
-                    More recently, under his presidency, Ruto has been linked to controversies over the edible oil scandal where local manufacturers accused the government of favoring imported oils through dubious government-to-government deals, as reported by Business Daily Africa. There have also been allegations of corruption in the fertilizer distribution program, with fake fertilizers being distributed, stirring significant public outcry as highlighted by The Star.
-                </p>
-                <p>
-                    The scandal involving the disappearance of condemned sugar from government warehouses in 2023 further added to the list of corruption allegations, with NTV Kenya reporting on how this led to potential health hazards and financial losses.
-                </p>
-                <p>
-                    Throughout these years, Ruto has often denied direct involvement, claiming these are politically motivated attacks. However, the recurring nature of these allegations has led to widespread calls for transparency and accountability. Various Kenyan media outlets have continuously called for thorough investigations, especially with the public's growing frustration over governance and resource management.
-                </p>
-                <p>
-                    In 2024, Ruto was ranked among the most corrupt leaders globally by the Organized Crime and Corruption Reporting Project (OCCRP), based on public nominations highlighting his administration's perceived corruption, as covered by multiple Kenyan news sources including The EastAfrican and Capital FM.
-                </p>
-                <p>
-                    In conclusion, the narrative around William Ruto's political career is punctuated by numerous corruption allegations, reflecting a pattern that spans decades. While no single case has definitively proven his personal culpability, the consistent association with these scandals has fueled significant public skepticism and demand for a cleaner political environment in Kenya.
-                </p>
-            </article>
-        </div>
+            <!-- Image Carousel -->
+            <div class="carousel-container mb-8 rounded-lg overflow-hidden shadow-md">
+                <div class="carousel-images">
+                    <img src="../Assets/maandamano1.webp" alt="Anti-corruption protest in Kenya">
+                    <img src="../Assets/tq_gkuesghzdx-71l1500h.png" alt="William Ruto corruption allegations">
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content bg-white p-6 md:p-8 rounded-lg shadow-sm">
+                <p>William Ruto's involvement in corruption scandals dates back to his early political career. In the 1990s, as part of the youth wing of the then-dominant KANU party, he was linked to various allegations of financial misconduct. One of the earliest known cases was the Weston Hotel scandal, where Ruto was accused of involvement in the irregular acquisition of land in Nairobi, as reported by The Nation in 1997.</p>
+                
+                <p>During his tenure as Minister of Agriculture in the early 2000s, Ruto faced allegations related to the maize scandal, where he was accused of facilitating the illegal sale of maize from the national strategic reserves, according to reports from The Standard in 2008.</p>
+                
+                <p>As Deputy President and in his presidential term, several scandals have been associated with his name. One of the notable ones was the Arror and Kimwarer dams scandal, where billions of shillings were reportedly misappropriated. This was extensively covered by Daily Nation, highlighting the loss of public funds intended for dam construction that never materialized.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Recent Corruption Allegations</h2>
+                
+                <p>Another significant case was the KEMSA (Kenya Medical Supplies Authority) scandal in 2020, where during the COVID-19 response, millions were allegedly siphoned off in a deal for mosquito nets and PPE. This was documented by Citizen TV, with calls for investigations into the procurement process.</p>
+                
+                <p>More recently, under his presidency, Ruto has been linked to controversies over the edible oil scandal where local manufacturers accused the government of favoring imported oils through dubious government-to-government deals, as reported by Business Daily Africa. There have also been allegations of corruption in the fertilizer distribution program, with fake fertilizers being distributed, stirring significant public outcry as highlighted by The Star.</p>
+                
+                <p>The scandal involving the disappearance of condemned sugar from government warehouses in 2023 further added to the list of corruption allegations, with NTV Kenya reporting on how this led to potential health hazards and financial losses.</p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Global Recognition of Corruption</h2>
+                
+                <p>Throughout these years, Ruto has often denied direct involvement, claiming these are politically motivated attacks. However, the recurring nature of these allegations has led to widespread calls for transparency and accountability. Various Kenyan media outlets have continuously called for thorough investigations, especially with the public's growing frustration over governance and resource management.</p>
+                
+                <p>In 2024, Ruto was ranked among the most corrupt leaders globally by the Organized Crime and Corruption Reporting Project (OCCRP), based on public nominations highlighting his administration's perceived corruption, as covered by multiple Kenyan news sources including The EastAfrican and Capital FM.</p>
+                
+                <p>In conclusion, the narrative around William Ruto's political career is punctuated by numerous corruption allegations, reflecting a pattern that spans decades. While no single case has definitively proven his personal culpability, the consistent association with these scandals has fueled significant public skepticism and demand for a cleaner political environment in Kenya.</p>
+            </div>
+        </article>
     </main>
 
-    <footer>
-        <p>© 2025 Ruto Must Go</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-montserrat">RutoMustGo</h3>
+                    <p>Documenting the failures and abuses of power during William Ruto's presidency.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-red-400 transition">Home</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-red-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../Blogs/politics.html" class="hover:text-red-400 transition">Politics</a></li>
+                        <li><a href="../Blogs/corruption.html" class="hover:text-red-400 transition">Corruption</a></li>
+                        <li><a href="../Blogs/abductions.html" class="hover:text-red-400 transition">Abductions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/jonathan.mwaniki.127" class="text-2xl hover:text-red-400 transition"><i class="bi-facebook"></i></a>
+                        <a href="https://x.com/Maestropuns" class="text-2xl hover:text-red-400 transition"><i class="bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/rutomustgo" class="text-2xl hover:text-red-400 transition"><i class="bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 RutoMustGo. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        // JavaScript for Auto-Switching Image Carousel
-        let slideIndex = 0;
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
 
+        // Set current date
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', options);
+
+        // Image Carousel
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".carousel-images img");
+        
         function showSlides() {
-            let slides = document.querySelectorAll(".carousel-images img");
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  // Hide all images
+                slides[i].style.display = "none";
             }
             slideIndex++;
             if (slideIndex > slides.length) {
-                slideIndex = 1;  // Loop back to the first image
+                slideIndex = 1;
             }
-            slides[slideIndex - 1].style.display = "block";  // Show the current image
-            setTimeout(showSlides, 2000);  // Change image every 2 seconds
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
-
-        showSlides();  // Initial call to start the carousel
+        
+        showSlides();
     </script>
 </body>
 </html>
